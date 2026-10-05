@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Console — Stackly Operations</title>
+<meta name="description" content="Stackly operations console: revenue, bookings, clinician performance, patients and platform health.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>E</i>
+      <span><b data-user-name>Elena Ruiz</b><span>Operations Admin</span></span>
+    </div>
+
+    <div class="side-label">Operations</div>
+    <nav class="side-nav">
+      <a class="side-link active" href="admin.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Overview</a>
+      <a class="side-link" href="patients.html"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> Patients <span class="badge-n">12</span></a>
+      <a class="side-link" href="clinicians.html"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i> Clinicians</a>
+      <a class="side-link" href="bookings.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Bookings <span class="badge-n">5</span></a>
+      <a class="side-link" href="revenue.html"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i> Revenue</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search patients, clinicians, invoice IDs…" aria-label="Search" id="globalSearch">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Alerts">
+            <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-toast="Operations export queued — bookings, revenue and roster detail.">Export CSV</button>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>E</i>
+            <span><b data-user-name>Elena Ruiz</b><span data-user-email>elena@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <div class="dash-hello" id="overview">
+        <div>
+          <h1>Operations overview for <span data-user-first>Elena</span></h1>
+          <p>Platform-wide performance for Oct 1 – Oct 31, 2026 &middot; data refreshed 6 minutes ago</p>
+        </div>
+        <div class="acts">
+          <a href="clinicians.html" class="btn btn-sm btn-ghost"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i> Add clinician</a>
+          <a href="bookings.html" class="btn btn-sm">Review bookings <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+        <div><b>4 items need your review</b><p>2 clinician credential renewals, 1 flagged review and 1 patient privacy request are pending.</p></div>
+        <a href="#moderation">Open queue →</a>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>12.4%</span></div>
+          <h3>$<span data-count="842" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">k</span></h3>
+          <p>Monthly recurring revenue</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>8.1%</span></div>
+          <h3><span data-count="18420" data-dec="0">0</span></h3>
+          <p>Active patients</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>3.2%</span></div>
+          <h3><span data-count="912" data-dec="0">0</span></h3>
+          <p>Credentialed clinicians</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span><span class="trend down"><i class="fa-solid fa-arrow-down fa-iw" aria-hidden="true"></i>0.3%</span></div>
+          <h3><span data-count="96.1" data-dec="1">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">%</span></h3>
+          <p>First-contact resolution</p>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2" id="revenue">
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Revenue &amp; visit volume</h3><p>Net revenue against completed consultations</p></div>
+            <div class="tabs" data-tab-group="#revChart">
+              <button class="tab active" data-range="1M">1M</button>
+              <button class="tab" data-range="Q">Q</button>
+              <button class="tab" data-range="Y">Y</button>
+            </div>
+          </div>
+          <div class="chart-wrap" id="revChart"
+               data-labels="W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12"
+               data-chart='[{"name":"Net revenue","color":"#17b8a6","data":[52,58,55,63,61,68,72,69,76,81,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[31,34,33,38,37,41,44,42,46,49,47,52]}]'
+               data-series-map='{"1M":{"labels":["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[52,58,55,63,61,68,72,69,76,81,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[31,34,33,38,37,41,44,42,46,49,47,52]}]},"Q":{"labels":["Apr","May","Jun"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[71,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[43,47,52]}]},"Y":{"labels":["Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[54,57,59,61,64,66,68,71,72,75,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[33,35,36,37,39,40,41,43,44,46,47,52]}]}}'
+               data-active="1M"></div>
+          <div class="legend">
+            <span style="--c:#17b8a6"><i></i> Net revenue ($k)</span>
+            <span style="--c:#7c5cff"><i></i> Completed visits (hundreds)</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Care track mix</h3><p>Share of visits this month</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="104 172"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#7c5cff" stroke-dasharray="63 213" stroke-dashoffset="-104"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="48 228" stroke-dashoffset="-167"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ff6fa8" stroke-dasharray="33 243" stroke-dashoffset="-215"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="28 248" stroke-dashoffset="-248"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="48900" data-dec="0">0</span></b><span>Total visits</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> Primary &amp; urgent care <b>38%</b></li>
+            <li style="--c:#7c5cff"><i></i> Mental health <b>23%</b></li>
+            <li style="--c:#4aa8ff"><i></i> Specialists <b>17%</b></li>
+            <li style="--c:#ff6fa8"><i></i> Chronic care <b>12%</b></li>
+            <li style="--c:#ffb547"><i></i> Diagnostics <b>10%</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Clinic capacity</h3><p>Utilisation vs target by region</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>West Coast <span>92% of target</span></b><div class="pg-bar"><i data-pct="92" style="--c:#17b8a6"></i></div><small>14 clinics &middot; 214 clinicians</small></div>
+            <div class="pg-item"><b>Northeast <span>86% of target</span></b><div class="pg-bar"><i data-pct="86" style="--c:#4aa8ff"></i></div><small>11 clinics &middot; 178 clinicians</small></div>
+            <div class="pg-item"><b>Midwest &amp; South <span>74% of target</span></b><div class="pg-bar"><i data-pct="74" style="--c:#7c5cff"></i></div><small>9 clinics &middot; 141 clinicians</small></div>
+            <div class="pg-item"><b>APAC &amp; EU <span>61% of target</span></b><div class="pg-bar"><i data-pct="61" style="--c:#ffb547"></i></div><small>8 clinics &middot; 96 clinicians</small></div>
+          </div>
+        </div>
+
+        <div class="panel" id="system">
+          <div class="panel-head"><div><h3>System health</h3><p>Live service status</p></div>
+          <a href="#system" class="panel-link">Status page <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+          </div>
+          <div class="progress-list">
+            <div class="pg-item"><b>Video infrastructure <span>99.98%</span></b><div class="pg-bar"><i data-pct="99" style="--c:#17b8a6"></i></div><small>12ms avg latency &middot; 0 incidents in 30d</small></div>
+            <div class="pg-item"><b>API &amp; records <span>99.95%</span></b><div class="pg-bar"><i data-pct="99" style="--c:#4aa8ff"></i></div><small>P95 84ms &middot; 1 incident in 30d</small></div>
+            <div class="pg-item"><b>e-Pharmacy network <span>99.72%</span></b><div class="pg-bar"><i data-pct="97" style="--c:#ffb547"></i></div><small>42,000 pharmacies &middot; 3 incidents</small></div>
+            <div class="pg-item"><b>Diagnostics lab <span>97.10%</span></b><div class="pg-bar"><i data-pct="97" style="--c:#ff6fa8"></i></div><small>Under investigation &middot; ETD 40m</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px" id="patients">
+        <div class="panel-head">
+          <div><h3>Patient accounts</h3><p>Recently active &amp; flagged</p></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <div class="search-box" style="padding:8px 16px;flex:none">
+              <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+              <input type="search" placeholder="Filter patients…" data-table-filter="#patientTbl" aria-label="Filter patients">
+            </div>
+            <a href="patients.html" class="btn btn-sm btn-ghost">All patients</a>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="patientTbl">
+            <thead>
+              <tr>
+                <th style="width:36px"><input type="checkbox" data-select-all aria-label="Select all patients" style="width:18px;height:18px;accent-color:var(--brand)"></th>
+                <th>Patient</th><th>Plan</th><th>Last visit</th><th>Visits</th><th>Status</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Jordan Blake" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1494790108377-be9c29b29330_100x100.webp" alt="Jordan Blake"><span><b>Jordan Blake</b><span>jordan@pulsecare.health</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Today, 9:12 AM</td><td class="amt">18</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Maya Torres" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1438761681033-6461ffad8d80_100x100.webp" alt="Maya Torres"><span><b>Maya Torres</b><span>maya.t@example.com</span></span></span></td>
+                <td>Pay per visit</td>
+                <td>Yesterday</td><td class="amt">7</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Daniel Okoye" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1500648767791-00dcc994a43e_100x100.webp" alt="Daniel Okoye"><span><b>Daniel Okoye</b><span>d.okoye@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Oct 18, 2026</td><td class="amt">42</td><td><span class="pill-state st-amber"><i></i>Payment retry</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Elena Novak" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1544005313-94ddf0286df2_100x100.webp" alt="Elena Novak"><span><b>Elena Novak</b><span>elena.n@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Oct 12, 2026</td><td class="amt">26</td><td><span class="pill-state st-blue"><i></i>Identity pending</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Verify"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Tom Herrera" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1506794778202-cad84cf45f1d_100x100.webp" alt="Tom Herrera"><span><b>Tom Herrera</b><span>t.herrera@example.com</span></span></span></td>
+                <td>Pay per visit</td>
+                <td>Oct 02, 2026</td><td class="amt">3</td><td><span class="pill-state st-red"><i></i>Flagged</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Resolve"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Priya Raman" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1534528741775-53994a69daeb_100x100.webp" alt="Priya Raman"><span><b>Priya Raman</b><span>priya.r@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Sep 28, 2026</td><td class="amt">31</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel" id="clinicians">
+          <div class="panel-head">
+            <div><h3>Clinician performance</h3><p>Top-rated by patient satisfaction</p></div>
+            <a href="clinicians.html" class="btn btn-sm btn-ghost">All 912</a>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl" style="min-width:520px">
+              <thead><tr><th>Clinician</th><th>Specialty</th><th>Visits</th><th>Rating</th></tr></thead>
+              <tbody>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1559839734-2b71ea197ec2_100x100.webp" alt="Dr. Lena Fischer"><span><b>Dr. Lena Fischer</b><span>12 yrs exp.</span></span></span></td><td>Family Medicine</td><td class="amt">1,842</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td></tr>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1582750433449-648ed127bb54_100x100.webp" alt="Dr. Ravi Mehta"><span><b>Dr. Ravi Mehta</b><span>14 yrs exp.</span></span></span></td><td>Psychiatry</td><td class="amt">1,614</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td></tr>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1594824476967-48c8b964273f_100x100.webp" alt="Dr. Amara Osei"><span><b>Dr. Amara Osei</b><span>9 yrs exp.</span></span></span></td><td>Dermatology</td><td class="amt">1,588</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 5.0</td></tr>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1612349317150-e413f6a5b16d_100x100.webp" alt="Dr. Marcus Cole"><span><b>Dr. Marcus Cole</b><span>16 yrs exp.</span></span></span></td><td>Cardiology</td><td class="amt">1,402</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.8</td></tr>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1584982751601-97dcc096659c_100x100.webp" alt="Dr. Sofia Marin"><span><b>Dr. Sofia Marin</b><span>11 yrs exp.</span></span></span></td><td>Pediatrics</td><td class="amt">1,377</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td></tr>
+                <tr><td><span class="cell-user"><img src="images/unsplash-1579684385127-1ef15d508118_100x100.webp" alt="Dr. Daniel Okafor"><span><b>Dr. Daniel Okafor</b><span>15 yrs exp.</span></span></span></td><td>Endocrinology</td><td class="amt">1,204</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.8</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" id="bookings">
+          <div class="panel-head"><div><h3>Booking requests</h3><p>Awaiting triage or assignment</p></div>
+            <div class="tabs">
+              <button class="tab active">Pending</button>
+              <button class="tab">Done</button>
+            </div>
+          </div>
+          <div class="dash-grid" style="gap:12px;margin:0" data-stagger>
+            <div class="app-card" style="--c:#17b8a6">
+              <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8412</b></span>
+              <div class="app-info"><b>Anna Kowalski</b><p>Cardiology &middot; Palpitations, 2 weeks</p>
+                <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 6 min ago</span><span><i class="fa-solid fa-user-clock fa-iw" aria-hidden="true"></i> Unassigned</span></div>
+              </div>
+              <div class="app-act">
+                <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+                <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <div class="app-card" style="--c:#4aa8ff">
+              <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8411</b></span>
+              <div class="app-info"><b>Marcus Bell</b><p>Mental health &middot; Anxiety, 3 weeks</p>
+                <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 22 min ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 3 matching</span></div>
+              </div>
+              <div class="app-act">
+                <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+                <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <div class="app-card" style="--c:#7c5cff">
+              <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8409</b></span>
+              <div class="app-info"><b>Sofia Mendes</b><p>Pediatrics &middot; Child fever, 1 day</p>
+                <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 41 min ago</span><span><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i> Priority</span></div>
+              </div>
+              <div class="app-act">
+                <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+                <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <div class="app-card" style="--c:#ffb547">
+              <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8407</b></span>
+              <div class="app-info"><b>Yusuf Demir</b><p>Dermatology &middot; Rash, 4 days</p>
+                <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 1h ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 5 matching</span></div>
+              </div>
+              <div class="app-act">
+                <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+                <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <div class="app-card" style="--c:#ff6fa8">
+              <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8404</b></span>
+              <div class="app-info"><b>Grace Liu</b><p>Chronic care &middot; Diabetes review</p>
+                <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 2h ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 2 matching</span></div>
+              </div>
+              <div class="app-act">
+                <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+                <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel" id="moderation">
+          <div class="panel-head"><div><h3>Moderation queue</h3><p>4 items pending</p></div>
+            <a href="#moderation" class="panel-link">Open queue <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+          </div>
+          <div class="feed">
+            <div class="feed-item"><span class="feed-ic" style="--c:#7c5cff"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Clinician credential renewal due</b><p>Dr. Naomi Adeyemi &middot; Psychiatry &middot; expires in 14 days</p><time>Flagged 2 hours ago</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#ff6fa8"><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Patient privacy request</b><p>Records export &amp; deletion — 30-day statutory window</p><time>Flagged 4 hours ago</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#ffb547"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Flagged 1-star review</b><p>"Waited 40 minutes" &middot; Video Visit · Jersey City hub</p><time>Flagged yesterday</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#17b8a6"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>State licence verification failed</b><p>New applicant &middot; Primary Care &middot; Texas</p><time>Flagged yesterday</time></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="audit">
+          <div class="panel-head"><div><h3>Activity log</h3><p>Admin actions, last 24 hours</p></div>
+            <a href="#audit" class="panel-link">Full audit <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+          </div>
+          <div class="feed">
+            <div class="feed-item"><span class="feed-ic" style="--c:#17b8a6"><i class="fa-solid fa-plus fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>12 clinicians approved</b><p>Batch credentialing · Operations team</p><time>09:14</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#4aa8ff"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Refund issued — $79.00</b><p>Invoice #INV-88213 · Jordan Blake</p><time>08:52</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#7c5cff"><i class="fa-solid fa-lock fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>2FA enforced for admins</b><p>Security policy change · Applied to all 18 staff</p><time>07:31</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#ffb547"><i class="fa-solid fa-briefcase fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Reports exported</b><p>Q3 revenue workbook · Compliance</p><time>06:45</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#ff6fa8"><i class="fa-solid fa-gear fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Rate limit updated</b><p>e-Pharmacy API · 600 to 900 rpm</p><time>05:02</time></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Quick admin actions</h3><p>Routine operations shortcuts</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Onboarding invite sent to the new clinician.">
+            <span class="q-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span>
+            <b>Invite clinician</b><span>Credentialed onboarding</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Bulk booking report generated (PDF, 4 pages).">
+            <span class="q-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <b>Generate report</b><span>Bookings, revenue, outcomes</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="Broadcast composer opened — 4 clinic audiences available.">
+            <span class="q-ic"><i class="fa-solid fa-paper-plane fa-iw" aria-hidden="true"></i></span>
+            <b>Send broadcast</b><span>To clinicians or patients</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Role editor opened — 18 staff accounts.">
+            <span class="q-ic"><i class="fa-solid fa-award fa-iw" aria-hidden="true"></i></span>
+            <b>Manage roles</b><span>18 admin staff accounts</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

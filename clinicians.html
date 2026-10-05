@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinicians — Stackly Admin Console</title>
+<meta name="description" content="Stackly admin: clinician roster, performance, specialties, ratings and credentialing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>E</i>
+      <span><b data-user-name>Elena Ruiz</b><span>Operations Admin</span></span>
+    </div>
+
+    <div class="side-label">Operations</div>
+    <nav class="side-nav">
+      <a class="side-link" href="admin.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Overview</a>
+      <a class="side-link" href="patients.html"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> Patients <span class="badge-n">12</span></a>
+      <a class="side-link active" href="clinicians.html"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i> Clinicians</a>
+      <a class="side-link" href="bookings.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Bookings <span class="badge-n">5</span></a>
+      <a class="side-link" href="revenue.html"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i> Revenue</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search patients, clinicians, invoice IDs…" aria-label="Search" id="globalSearch">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Alerts">
+            <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-toast="Roster export queued — 912 clinician records.">Export CSV</button>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>E</i>
+            <span><b data-user-name>Elena Ruiz</b><span data-user-email>elena@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="admin.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Admin console <span>/</span> <span>Clinicians</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Clinician roster</h1>
+          <p>912 credentialed clinicians across 42 clinics &middot; 24 applications pending review</p>
+        </div>
+        <div class="acts">
+          <a href="#pipeline" class="btn btn-sm btn-ghost"><i class="fa-solid fa-clipboard-check fa-iw" aria-hidden="true"></i> Review pipeline</a>
+          <button class="btn btn-sm" data-toast="Invitation link copied — credentialing onboarding takes about 12 minutes.">Invite clinician</button>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+        <div><b>2 credentials expire within 14 days</b><p>Dr. Naomi Adeyemi and Dr. Ibrahim Nasser must renew before they can keep accepting visits.</p></div>
+        <a href="#renewals">Review renewals &rarr;</a>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>3.2%</span></div>
+          <h3><span data-count="912" data-dec="0">0</span></h3>
+          <p>Credentialed clinicians</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>6</span></div>
+          <h3><span data-count="24" data-dec="0">0</span></h3>
+          <p>Pending credentialing</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>0.2</span></div>
+          <h3><span data-count="4.8" data-dec="1">0</span></h3>
+          <p>Average patient rating</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>5.6%</span></div>
+          <h3><span data-count="2140" data-dec="0">0</span></h3>
+          <p>Visits per clinician / month</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Clinician performance</h3><p>Top-rated by patient satisfaction &middot; 912 total</p></div>
+          <div class="tool-row" style="margin:0">
+            <div class="search-box" style="padding:8px 16px;flex:none">
+              <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+              <input type="search" placeholder="Filter clinicians…" data-table-filter="#clinicianTbl" aria-label="Filter clinicians">
+            </div>
+            <button class="btn btn-sm btn-ghost" data-toast="Full roster opened — 912 credentialed clinicians.">All 912</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="clinicianTbl" style="min-width:720px">
+            <thead><tr><th>Clinician</th><th>Specialty</th><th>Visits</th><th>Rating</th><th>Credential</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1559839734-2b71ea197ec2_100x100.webp" alt="Dr. Lena Fischer"><span><b>Dr. Lena Fischer</b><span>12 yrs exp. &middot; West Coast</span></span></span></td>
+                <td>Family Medicine</td><td class="amt">1,842</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td><td><span class="pill-state st-green"><i></i>Verified</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1582750433449-648ed127bb54_100x100.webp" alt="Dr. Ravi Mehta"><span><b>Dr. Ravi Mehta</b><span>14 yrs exp. &middot; Northeast</span></span></span></td>
+                <td>Psychiatry</td><td class="amt">1,614</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td><td><span class="pill-state st-green"><i></i>Verified</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1594824476967-48c8b964273f_100x100.webp" alt="Dr. Amara Osei"><span><b>Dr. Amara Osei</b><span>9 yrs exp. &middot; APAC &amp; EU</span></span></span></td>
+                <td>Dermatology</td><td class="amt">1,588</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 5.0</td><td><span class="pill-state st-green"><i></i>Verified</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1612349317150-e413f6a5b16d_100x100.webp" alt="Dr. Marcus Cole"><span><b>Dr. Marcus Cole</b><span>16 yrs exp. &middot; Midwest &amp; South</span></span></span></td>
+                <td>Cardiology</td><td class="amt">1,402</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.8</td><td><span class="pill-state st-green"><i></i>Verified</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1584982751601-97dcc096659c_100x100.webp" alt="Dr. Sofia Marin"><span><b>Dr. Sofia Marin</b><span>11 yrs exp. &middot; West Coast</span></span></span></td>
+                <td>Pediatrics</td><td class="amt">1,377</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td><td><span class="pill-state st-green"><i></i>Verified</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1579684385127-1ef15d508118_100x100.webp" alt="Dr. Daniel Okafor"><span><b>Dr. Daniel Okafor</b><span>15 yrs exp. &middot; Northeast</span></span></span></td>
+                <td>Endocrinology</td><td class="amt">1,204</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.8</td><td><span class="pill-state st-amber"><i></i>Renewal due</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send renewal reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1573497019940-1c28c88b4f3e_100x100.webp" alt="Dr. Naomi Adeyemi"><span><b>Dr. Naomi Adeyemi</b><span>8 yrs exp. &middot; West Coast</span></span></span></td>
+                <td>Psychiatry</td><td class="amt">968</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.9</td><td><span class="pill-state st-red"><i></i>Expires in 14d</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send renewal reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><span class="cell-user"><img src="images/unsplash-1537368910025-700350fe46c7_100x100.webp" alt="Dr. Hugo Fontaine"><span><b>Dr. Hugo Fontaine</b><span>6 yrs exp. &middot; APAC &amp; EU</span></span></span></td>
+                <td>Family Medicine</td><td class="amt">884</td><td><span class="stars-sm"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> 4.7</td><td><span class="pill-state st-blue"><i></i>Probation</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Complete probation review"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Roster by specialty</h3><p>912 credentialed clinicians</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>Family Medicine <span>214 clinicians</span></b><div class="pg-bar"><i data-pct="100" style="--c:#17b8a6"></i></div><small>23% of roster &middot; 14 clinics</small></div>
+            <div class="pg-item"><b>Psychiatry <span>168 clinicians</span></b><div class="pg-bar"><i data-pct="79" style="--c:#7c5cff"></i></div><small>18% of roster &middot; 11 clinics</small></div>
+            <div class="pg-item"><b>Pediatrics <span>152 clinicians</span></b><div class="pg-bar"><i data-pct="71" style="--c:#4aa8ff"></i></div><small>17% of roster &middot; 9 clinics</small></div>
+            <div class="pg-item"><b>Cardiology <span>131 clinicians</span></b><div class="pg-bar"><i data-pct="61" style="--c:#ffb547"></i></div><small>14% of roster &middot; 8 clinics</small></div>
+            <div class="pg-item"><b>Endocrinology <span>129 clinicians</span></b><div class="pg-bar"><i data-pct="60" style="--c:#ff6fa8"></i></div><small>14% of roster &middot; 7 clinics</small></div>
+            <div class="pg-item"><b>Dermatology <span>118 clinicians</span></b><div class="pg-bar"><i data-pct="55" style="--c:#17b8a6"></i></div><small>13% of roster &middot; 6 clinics</small></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Rating distribution</h3><p>Post-visit patient reviews</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="94 182"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="80 196" stroke-dashoffset="-94"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#7c5cff" stroke-dasharray="58 218" stroke-dashoffset="-174"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="31 245" stroke-dashoffset="-232"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ff6fa8" stroke-dasharray="13 263" stroke-dashoffset="-263"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="48900" data-dec="0">0</span></b><span>Reviews</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> 5.0 stars <b>312</b></li>
+            <li style="--c:#4aa8ff"><i></i> 4.9 stars <b>268</b></li>
+            <li style="--c:#7c5cff"><i></i> 4.8 stars <b>189</b></li>
+            <li style="--c:#ffb547"><i></i> 4.7 stars <b>98</b></li>
+            <li style="--c:#ff6fa8"><i></i> Below 4.7 <b>45</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Visits by specialty</h3><p>Primary care against specialist demand</p></div>
+          <div class="tabs">
+            <button class="tab active">12M</button>
+            <button class="tab">6M</button>
+            <button class="tab">30D</button>
+          </div>
+        </div>
+        <div class="chart-wrap" id="clinChart"
+             data-labels="Nov,Dec,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"
+             data-chart='[{"name":"Primary &amp; urgent","color":"#17b8a6","data":[3120,3280,3410,3560,3720,3890,4010,4180,4260,4410,4520,4680]},{"name":"Specialist &amp; chronic","color":"#7c5cff","data":[1840,1920,2010,2080,2160,2240,2330,2410,2480,2560,2630,2720]}]'></div>
+        <div class="legend">
+          <span style="--c:#17b8a6"><i></i> Primary &amp; urgent care</span>
+          <span style="--c:#7c5cff"><i></i> Specialist &amp; chronic care</span>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel" id="pipeline">
+          <div class="panel-head">
+            <div><h3>Credentialing pipeline</h3><p>24 applications pending review</p></div>
+            <button class="btn btn-sm btn-ghost" data-toast="Batch review opened — 24 applications, oldest waiting 3 days.">Review all 24</button>
+          </div>
+          <div class="feed">
+            <div class="feed-item"><span class="feed-ic" style="--c:#ff6fa8"><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>State licence verification failed</b><p>New applicant &middot; Primary Care &middot; Texas</p><time>Submitted yesterday</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#4aa8ff"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>9 references outstanding</b><p>Psychiatry applicant &middot; 3 of 12 received</p><time>Waiting 2 days</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#7c5cff"><i class="fa-solid fa-lock fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>DEA registration check pending</b><p>Controlled substances &middot; 2 applicants</p><time>Waiting 6 hours</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#17b8a6"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>12 clinicians approved</b><p>Batch credentialing &middot; Operations team</p><time>Approved today at 09:14</time></div>
+            </div>
+            <div class="feed-item"><span class="feed-ic" style="--c:#ffb547"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span>
+              <div class="feed-body"><b>Malpractice certificate expiring</b><p>4 clinicians &middot; certificates due within 30 days</p><time>Notified 3 days ago</time></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="renewals">
+          <div class="panel-head">
+            <div><h3>Upcoming renewals</h3><p>Next 60 days</p></div>
+            <button class="btn btn-sm btn-ghost" data-toast="Reminders sent to 4 clinicians with expiring credentials.">Remind all</button>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl" style="min-width:420px">
+              <thead><tr><th>Clinician</th><th>Credential</th><th>Expires</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><span class="cell-user"><img src="images/unsplash-1573497019940-1c28c88b4f3e_100x100.webp" alt="Dr. Naomi Adeyemi"><span><b>Dr. Naomi Adeyemi</b><span>Psychiatry</span></span></span></td>
+                  <td>State licence</td><td><span class="pill-state st-red"><i></i>14 days</span></td>
+                  <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button></div></td>
+                </tr>
+                <tr>
+                  <td><span class="cell-user"><img src="images/unsplash-1537368910025-700350fe46c7_100x100.webp" alt="Dr. Ibrahim Nasser"><span><b>Dr. Ibrahim Nasser</b><span>Cardiology</span></span></span></td>
+                  <td>Board certification</td><td><span class="pill-state st-amber"><i></i>21 days</span></td>
+                  <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button></div></td>
+                </tr>
+                <tr>
+                  <td><span class="cell-user"><img src="images/unsplash-1579684385127-1ef15d508118_100x100.webp" alt="Dr. Daniel Okafor"><span><b>Dr. Daniel Okafor</b><span>Endocrinology</span></span></span></td>
+                  <td>DEA registration</td><td><span class="pill-state st-amber"><i></i>33 days</span></td>
+                  <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button></div></td>
+                </tr>
+                <tr>
+                  <td><span class="cell-user"><img src="images/unsplash-1584982751601-97dcc096659c_100x100.webp" alt="Dr. Sofia Marin"><span><b>Dr. Sofia Marin</b><span>Pediatrics</span></span></span></td>
+                  <td>Malpractice cover</td><td><span class="pill-state st-blue"><i></i>47 days</span></td>
+                  <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Send reminder"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Quick clinician actions</h3><p>Roster and credentialing shortcuts</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Onboarding invite sent to the new clinician.">
+            <span class="q-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span>
+            <b>Invite clinician</b><span>Credentialed onboarding</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Credentialing batch started for 24 applications.">
+            <span class="q-ic"><i class="fa-solid fa-clipboard-check fa-iw" aria-hidden="true"></i></span>
+            <b>Run credentialing</b><span>24 applications pending</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="Broadcast composer opened — 4 clinic audiences available.">
+            <span class="q-ic"><i class="fa-solid fa-paper-plane fa-iw" aria-hidden="true"></i></span>
+            <b>Message roster</b><span>Send to all 912 clinicians</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Roster export queued — 912 records with credential dates.">
+            <span class="q-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <b>Export roster</b><span>With credential expiry dates</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

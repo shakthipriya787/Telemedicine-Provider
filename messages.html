@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages — Stackly</title>
+<meta name="description" content="Secure messages with your Stackly care team: ask questions, share updates and get replies around the clock.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>J</i>
+      <span><b data-user-name>Jordan Blake</b><span>Care+ Member</span></span>
+    </div>
+
+    <div class="side-label">Overview</div>
+    <nav class="side-nav">
+      <a class="side-link" href="dashboard.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Dashboard</a>
+      <a class="side-link" href="appointments.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Appointments</a>
+      <a class="side-link active" href="messages.html"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Messages <span class="badge-n">3</span></a>
+      <a class="side-link" href="prescriptions.html"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i> Prescriptions</a>
+      <a class="side-link" href="lab-results.html"><i class="fa-solid fa-inbox fa-iw" aria-hidden="true"></i> Lab Results</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+    
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search messages…" aria-label="Search messages">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <a href="contact.html" class="btn btn-sm">New visit</a>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>J</i>
+            <span><b data-user-name>Jordan Blake</b><span data-user-email>jordan@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="dashboard.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Dashboard <span>/</span> <span>Messages</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Messages</h1>
+          <p>Encrypted end to end. Your care team typically replies within 2 hours.</p>
+        </div>
+        <div class="acts">
+          <a href="appointments.html" class="btn btn-sm btn-ghost"><i class="fa-solid fa-envelope fa-iw" aria-hidden="true"></i> Book a visit</a>
+          <button class="btn btn-sm" data-toast="New conversation started &mdash; choose a clinician below.">New message</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></span><span class="trend down">Needs you</span></div>
+          <h3><span data-count="3" data-dec="0">0</span></h3>
+          <p>Unread messages</p>
+        </div>
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-file-lines fa-iw" aria-hidden="true"></i></span><span class="trend up">+2</span></div>
+          <h3><span data-count="12" data-dec="0">0</span></h3>
+          <p>Open threads</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span><span class="trend up">-8 min</span></div>
+          <h3><span data-count="24" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">min</span></h3>
+          <p>Average first reply</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-user-group fa-iw" aria-hidden="true"></i></span><span class="trend up">3 online</span></div>
+          <h3><span data-count="4" data-dec="0">0</span></h3>
+          <p>Clinicians on your team</p>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e" style="align-items:start">
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Inbox</h3><p>12 threads</p></div>
+            <div class="chips start" data-filter="#convList" style="gap:8px">
+              <button class="chip active" data-cat="all" style="padding:8px 15px;font-size:13.5px">All</button>
+              <button class="chip" data-cat="unread" style="padding:8px 15px;font-size:13.5px">Unread</button>
+              <button class="chip" data-cat="clinical" style="padding:8px 15px;font-size:13.5px">Clinical</button>
+              <button class="chip" data-cat="admin" style="padding:8px 15px;font-size:13.5px">Admin</button>
+            </div>
+          </div>
+          <div id="convList">
+            <div class="conv on" data-cats="clinical unread" data-msg tabindex="0">
+              <img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer">
+              <div class="conv-b"><b>Dr. Lena Fischer</b><p class="m">Your bloodwork came back — great numbers. Nothing to worry about...</p></div>
+              <div class="conv-meta"><time>12m</time><span class="badge-n">1</span></div>
+            </div>
+            <div class="conv" data-cats="clinical unread" data-msg tabindex="0">
+              <img src="images/unsplash-1582750433449-648ed127bb54_120x120.webp" alt="Dr. Ravi Mehta">
+              <div class="conv-b"><b>Dr. Ravi Mehta</b><p class="m">Before Thursday: keep the sleep log for the week. We'll review it together.</p></div>
+              <div class="conv-meta"><time>2h</time><span class="badge-n">1</span></div>
+            </div>
+            <div class="conv" data-cats="admin unread" data-msg tabindex="0">
+              <img src="images/unsplash-1519085360753-af0119f7cbe7_120x120.webp" alt="Care coordination">
+              <div class="conv-b"><b>Care Coordination</b><p class="m">Your refill for Lisinopril 10mg shipped and arrives Thursday 2–6pm.</p></div>
+              <div class="conv-meta"><time>1d</time><span class="badge-n">1</span></div>
+            </div>
+            <div class="conv" data-cats="clinical" data-msg tabindex="0">
+              <img src="images/unsplash-1594824476967-48c8b964273f_120x120.webp" alt="Dr. Amara Osei">
+              <div class="conv-b"><b>Dr. Amara Osei</b><p class="m">Photo looked much clearer this time. Continue treatment two weeks.</p></div>
+              <div class="conv-meta"><time>4d</time><span class="pill-state st-green"><i></i>Closed</span></div>
+            </div>
+            <div class="conv" data-cats="admin" data-msg tabindex="0">
+              <img src="images/unsplash-1454165804606-c3d57bc86b40_120x120.webp" alt="Billing team">
+              <div class="conv-b"><b>Billing &amp; Insurance</b><p class="m">Your October statement is ready. No balance is due.</p></div>
+              <div class="conv-meta"><time>9d</time><span class="pill-state st-green"><i></i>Closed</span></div>
+            </div>
+            <div class="conv" data-cats="clinical" data-msg tabindex="0">
+              <img src="images/unsplash-1584982751601-97dcc096659c_120x120.webp" alt="Dr. Sofia Marin">
+              <div class="conv-b"><b>Dr. Sofia Marin</b><p class="m">Sunscreen SPF 30+ daily should keep this stable through summer.</p></div>
+              <div class="conv-meta"><time>16d</time><span class="pill-state st-green"><i></i>Closed</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Conversation</h3><p>Encrypted thread</p></div>
+            <span class="pill-state st-green"><i></i>Replies within 2h</span>
+          </div>
+          <div class="thread-head">
+            <img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer">
+            <div><b>Dr. Lena Fischer</b><span>Family Medicine &middot; Your primary clinician</span></div>
+            <span class="pill-state st-green" style="margin-left:auto"><i></i>Online</span>
+          </div>
+          <div class="thread">
+            <div class="stamp">Thursday, Oct 15</div>
+            <div class="msg" data-msg tabindex="0">
+              <img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer">
+              <div class="msg-body"><b>Dr. Lena Fischer</b><p>Hi Jordan — your full blood panel is back and everything looks reassuring. HbA1c 5.4% and your lipids are right where we want them.</p></div>
+              <time>9:12 AM</time>
+            </div>
+            <div class="msg me" tabindex="0">
+              <img src="images/unsplash-1494790108377-be9c29b29330_120x120.webp" alt="Jordan Blake">
+              <div class="msg-body"><b>You</b><p>That's great news. The vitamin D was flagged low though — should I keep taking the supplement?</p></div>
+              <time>9:20 AM</time>
+            </div>
+            <div class="msg" data-msg tabindex="0">
+              <img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer">
+              <div class="msg-body"><b>Dr. Lena Fischer</b><p>Yes, keep going with 2,000 IU daily. I'd like to recheck it in about three months — I've added the order so it's already on your <a href="lab-results.html" style="color:var(--brand-d);font-weight:700">lab results</a> page.</p></div>
+              <time>9:26 AM</time>
+            </div>
+            <div class="stamp">Today</div>
+            <div class="msg" data-msg tabindex="0">
+              <img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer">
+              <div class="msg-body"><b>Dr. Lena Fischer</b><p>One more thing — nothing to act on, but your blood pressure is trending down nicely. Keep logging it, and let's talk it through on the 18th.</p></div>
+              <time>12m</time>
+            </div>
+          </div>
+
+          <form data-validate novalidate style="margin-top:22px;border-top:1px solid var(--line);padding-top:20px">
+            <div class="field">
+              <label for="msgBody">Reply to Dr. Fischer</label>
+              <textarea id="msgBody" name="message" required placeholder="Write your reply…" style="min-height:104px"></textarea>
+            </div>
+            <div class="dash-grid g-2" style="gap:14px;margin:16px 0 0;align-items:center">
+              <div class="field">
+                <label for="msgTopic">Topic</label>
+                <select id="msgTopic" name="topic">
+                  <option>Medication question</option>
+                  <option>Lab results</option>
+                  <option>Upcoming visit</option>
+                  <option>Referral request</option>
+                  <option>Billing</option>
+                </select>
+              </div>
+              <button class="btn" type="submit" style="align-self:end">
+                Send message <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="form-alert"><i class="fa-solid fa-circle-check fa-iw" style="font-size:20px;flex:none" aria-hidden="true"></i><span>Thank you! Our care team will reach out within 24 hours.</span></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head"><div><h3>Quick replies</h3><p>Tap to start a message, then edit before sending</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-reply="#msgBody" data-reply-text="Thanks for the update — I have a question about my dosage.">
+            <span class="q-ic"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></span>
+            <b>Ask about a dosage</b><span>Medication question</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-reply="#msgBody" data-reply-text="Could you walk me through my latest lab results?">
+            <span class="q-ic"><i class="fa-solid fa-inbox fa-iw" aria-hidden="true"></i></span>
+            <b>Discuss lab results</b><span>With your clinician</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-reply="#msgBody" data-reply-text="I need to reschedule my upcoming appointment.">
+            <span class="q-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span>
+            <b>Reschedule a visit</b><span>6 slots this week</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-reply="#msgBody" data-reply-text="I would like a referral to a specialist.">
+            <span class="q-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span>
+            <b>Request a referral</b><span>Usually same day</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Your care team</h3><p>4 clinicians with access to your records</p></div>
+          <a href="appointments.html" class="panel-link">Book a visit <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+        </div>
+        <div class="dash-grid g-4" style="margin:0" data-stagger>
+          <div class="app-card" style="--c:#17b8a6;flex-direction:column;align-items:flex-start">
+            <img src="images/unsplash-1559839734-2b71ea197ec2_160x160.webp" alt="Dr. Lena Fischer" style="width:56px;height:56px;border-radius:50%;object-fit:cover">
+            <div><b>Dr. Lena Fischer</b><p>Family Medicine &middot; Primary</p><div class="meta"><span class="pill-state st-green" style="padding:4px 10px"><i></i>Online</span></div></div>
+          </div>
+          <div class="app-card" style="--c:#7c5cff;flex-direction:column;align-items:flex-start">
+            <img src="images/unsplash-1582750433449-648ed127bb54_160x160.webp" alt="Dr. Ravi Mehta" style="width:56px;height:56px;border-radius:50%;object-fit:cover">
+            <div><b>Dr. Ravi Mehta</b><p>Psychiatry &middot; Therapist</p><div class="meta"><span class="pill-state st-green" style="padding:4px 10px"><i></i>Online</span></div></div>
+          </div>
+          <div class="app-card" style="--c:#4aa8ff;flex-direction:column;align-items:flex-start">
+            <img src="images/unsplash-1594824476967-48c8b964273f_160x160.webp" alt="Dr. Amara Osei" style="width:56px;height:56px;border-radius:50%;object-fit:cover">
+            <div><b>Dr. Amara Osei</b><p>Internal Medicine &middot; Labs</p><div class="meta"><span class="pill-state st-grey" style="padding:4px 10px"><i></i>Offline</span></div></div>
+          </div>
+          <div class="app-card" style="--c:#ff6fa8;flex-direction:column;align-items:flex-start">
+            <img src="images/unsplash-1584982751601-97dcc096659c_160x160.webp" alt="Dr. Sofia Marin" style="width:56px;height:56px;border-radius:50%;object-fit:cover">
+            <div><b>Dr. Sofia Marin</b><p>Dermatology &middot; Specialist</p><div class="meta"><span class="pill-state st-green" style="padding:4px 10px"><i></i>Online</span></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

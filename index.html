@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly — Telemedicine That Feels Like a Real Doctor's Visit</title>
+<meta name="description" content="Stackly is a modern telemedicine platform connecting you with licensed doctors in minutes. Video consults, e-prescriptions, lab tracking and 24/7 care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+      
+    </a>
+    <div class="nav-links" id="navLinks">
+      <div class="nav-drawer-brand">
+        <a href="index.html" class="brand">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+      </div>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-drawer-foot">
+        <a href="login.html" class="btn btn-ghost btn-block">Log In</a>
+        <a href="signup.html" class="btn btn-block">Sign Up</a>
+        <a href="tel:9876543210" class="drawer-note">
+          <i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>
+          24/7 care desk &middot; 9876543210
+        </a>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-sm btn-ghost">Log In</a>
+      <a href="signup.html" class="btn btn-sm">Sign Up</a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="blob blob-1" data-float></div>
+  <div class="blob blob-2" data-float></div>
+  <div class="grid-lines"></div>
+  <div class="container hero-grid">
+    <div class="hero-intro">
+      <div class="hero-badge" data-hero="badge"><b>NEW</b> AI symptom triage is now live</div>
+      <h1 data-hero="title">
+        <span class="word-wrap" style="display:block;overflow:hidden"><span class="word" style="display:block">Healthcare,</span></span>
+        <span class="word-wrap" style="display:block;overflow:hidden"><span class="word grad-text" style="display:block">without the</span></span>
+        <span class="word-wrap" style="display:block;overflow:hidden"><span class="word" style="display:block">waiting room.</span></span>
+      </h1>
+      <p class="hero-lead" data-hero="lead">Talk to a licensed doctor by video in under five minutes. Prescriptions, lab results and follow-ups — all inside one beautifully simple platform that never closes.</p>
+      <div class="hero-actions" data-hero="actions">
+        <a href="404.html" class="btn btn-lg">
+          <i class="fa-solid fa-envelope-open fa-iw" aria-hidden="true"></i>
+          Book Free Consult
+        </a>
+        <a href="services.html" class="btn btn-lg btn-white">
+          <i class="fa-solid fa-play fa-iw" style="font-size:16px" aria-hidden="true"></i>
+          Explore Services
+        </a>
+      </div>
+      <div class="hero-trust" data-hero="trust">
+        <div class="avatar-stack">
+          <img src="images/unsplash-1494790108377-be9c29b29330_120x120.webp" alt="Patient">
+          <img src="images/unsplash-1507003211169-0a1dd7228f2d_120x120.webp" alt="Patient">
+          <img src="images/unsplash-1438761681033-6461ffad8d80_120x120.webp" alt="Patient">
+          <img src="images/unsplash-1500648767791-00dcc994a43e_120x120.webp" alt="Patient">
+        </div>
+        <p><span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span> Trusted by <b>2.4 million</b> patients
+          <span>across 310+ cities this year</span></p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <img src="images/unsplash-1576091160399-112ba8d25d1d_900x1100.webp" alt="Doctor on a video consultation">
+      </div>
+      <div class="float-card fc-1">
+        <span class="fc-icon" style="background:linear-gradient(140deg,#17b8a6,#4aa8ff)">
+          <i class="fa-solid fa-heart-pulse fa-iw" aria-hidden="true"></i>
+        </span>
+        <span class="fc-txt"><b>4 min</b><span>avg. wait time</span></span>
+      </div>
+      <div class="float-card fc-2">
+        <span class="fc-icon" style="background:linear-gradient(140deg,#7c5cff,#ff6fa8)">
+          <i class="fa-solid fa-star fa-iw" aria-hidden="true"></i>
+        </span>
+        <span class="fc-txt"><b>4.9/5</b><span>12,480 reviews</span></span>
+      </div>
+      <div class="float-card fc-3">
+        <span class="pulse-dot"></span>
+        <span class="fc-txt"><b>Doctor online</b><span>Dr. Amara Osei &middot; Cardiology</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marquee" id="trust">
+  <div class="mq-track">
+    <span class="mq-item"><i class="fa-solid fa-shield-halved fa-iw" aria-hidden="true"></i>HIPAA Compliant</span>
+    <span class="mq-item"><i class="fa-solid fa-award fa-iw" aria-hidden="true"></i>Board Certified</span>
+    <span class="mq-item"><i class="fa-solid fa-envelope-open-text fa-iw" aria-hidden="true"></i>Insurance Accepted</span>
+    <span class="mq-item"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>Same-Day Slots</span>
+    <span class="mq-item"><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i>FDA Approved Rx</span>
+    <span class="mq-item"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i>900+ Clinicians</span>
+    <span class="mq-item"><i class="fa-solid fa-shield-halved fa-iw" aria-hidden="true"></i>HIPAA Compliant</span>
+    <span class="mq-item"><i class="fa-solid fa-award fa-iw" aria-hidden="true"></i>Board Certified</span>
+    <span class="mq-item"><i class="fa-solid fa-envelope-open-text fa-iw" aria-hidden="true"></i>Insurance Accepted</span>
+    <span class="mq-item"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>Same-Day Slots</span>
+    <span class="mq-item"><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i>FDA Approved Rx</span>
+    <span class="mq-item"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i>900+ Clinicians</span>
+  </div>
+</section>
+
+<section class="sect sect-tint" id="why">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Stackly</span>
+      <h2 class="sec-title">Care designed around <span class="grad-text">your day</span>, not ours</h2>
+      <p class="sec-sub">Six things that make a virtual visit feel as good as walking into the clinic — usually faster.</p>
+    </div>
+    <div class="cards-3" data-stagger>
+      <article class="card" style="--c:#17b8a6">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span>
+        <h3>Doctors in 4 minutes</h3>
+        <p>Our matching engine pairs you with the right licensed clinician for your symptoms, language and time zone — instantly, day or night.</p>
+        <a class="link" href="404.html">How it works <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+      <article class="card" style="--c:#4aa8ff">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-envelope fa-iw" aria-hidden="true"></i></span>
+        <h3>HD video + chat</h3>
+        <p>Crystal-clear 1080p consults with real-time captions, screen sharing for your lab reports and a secure in-call notepad.</p>
+        <a class="link" href="404.html">See features <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+      <article class="card" style="--c:#7c5cff">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-file-lines fa-iw" aria-hidden="true"></i></span>
+        <h3>e-Prescriptions</h3>
+        <p>Your prescription is signed electronically and sent to any of 42,000 partner pharmacies — usually ready before you close the tab.</p>
+        <a class="link" href="404.html">Pharmacy network <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+      <article class="card" style="--c:#ff6fa8">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-heart-pulse fa-iw" aria-hidden="true"></i></span>
+        <h3>Whole-health records</h3>
+        <p>Labs, imaging, visit notes and vitals in one timeline you actually understand — exportable to any provider with two taps.</p>
+        <a class="link" href="404.html">Our approach <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+      <article class="card" style="--c:#ffb547">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span>
+        <h3>Prices up front</h3>
+        <p>No surprise bills. See the exact cost, confirm your insurance and pay the copay before the visit even starts.</p>
+        <a class="link" href="404.html">Pricing plans <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+      <article class="card" style="--c:#12b3a0">
+        <span class="card-glow"></span>
+        <span class="c-icon"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></span>
+        <h3>Care that follows up</h3>
+        <p>Automated check-ins at 24h, 72h and 14 days. Your doctor gets notified if your symptoms haven't improved.</p>
+        <a class="link" href="404.html">Talk to us <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="sec-title">One platform. <span class="grad-text-2">Every kind of care.</span></h2>
+      <p class="sec-sub">From a two-minute cold consult to long-term chronic care management — pick the track that fits today.</p>
+    </div>
+    <div class="cards-3" data-stagger>
+      <article class="svc-card">
+        <div class="svc-media"><img src="images/unsplash-1516549655169-df83a0774514_700x450.webp" alt="Primary care video visit"><span class="tag">Most popular</span></div>
+        <div class="svc-body">
+          <h3>Primary &amp; Urgent Care</h3>
+          <p>Cold, flu, allergies, skin, UTIs, minor injuries and everything in between. Same-day slots with licensed family physicians.</p>
+          <div class="svc-meta"><span class="price">$29</span><span>per visit</span></div>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="svc-media"><img src="./images/mental health.webp" alt="Mental health consultation"><span class="tag">Confidential</span></div>
+        <div class="svc-body">
+          <h3>Mental Health</h3>
+          <p>Therapy, anxiety, stress, sleep and burnout support with licensed psychiatrists and psychologists — text, audio or video.</p>
+          <div class="svc-meta"><span class="price">$49</span><span>per session</span></div>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="svc-media"><img src="images/unsplash-1587854692152-cbe660dbde88_700x450.webp" alt="Pharmacy delivery"><span class="tag">Fast Rx</span></div>
+        <div class="svc-body">
+          <h3>e-Pharmacy &amp; Refills</h3>
+          <p>Prescriptions delivered to your door in under 24 hours, automatic refills, and medication interaction checks built in.</p>
+          <div class="svc-meta"><span class="price">$0</span><span>delivery fee</span></div>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="svc-media"><img src="images/unsplash-1631217868264-e5b90bb7e133_700x450.webp" alt="Chronic care management"><span class="tag">Ongoing</span></div>
+        <div class="svc-body">
+          <h3>Chronic Care</h3>
+          <p>Dedicated care plans for diabetes, hypertension, asthma and thyroid conditions with a nurse coordinator in your corner.</p>
+          <div class="svc-meta"><span class="price">$39</span><span>per month</span></div>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="svc-media"><img src="images/unsplash-1519494026892-80bbd2d6fd0d_700x450.webp" alt="Diagnostics and lab testing"><span class="tag">At-home</span></div>
+        <div class="svc-body">
+          <h3>Diagnostics &amp; Labs</h3>
+          <p>Order at-home test kits, share results in the app and get a doctor-reviewed interpretation with next-step guidance.</p>
+          <div class="svc-meta"><span class="price">$19</span><span>sample fee</span></div>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="svc-media"><img src="images/unsplash-1559839734-2b71ea197ec2_700x450.webp" alt="Specialist consultation"><span class="tag">Specialists</span></div>
+        <div class="svc-body">
+          <h3>Specialist Consults</h3>
+          <p>Dermatology, cardiology, pediatrics, nutrition and women's health — vetted experts with next-day availability.</p>
+          <div class="svc-meta"><span class="price">$79</span><span>per consult</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="center" style="margin-top:46px" data-stagger>
+      <a href="404.html" class="btn btn-ghost btn-lg">See all 18 services <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect-tint" id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="sec-title">From symptom to seen in <span class="grad-text">four steps</span></h2>
+      <p class="sec-sub">No driving, no waiting rooms, no clipboard. Just a short, calm flow you can finish from the couch.</p>
+    </div>
+    <div class="steps" data-stagger>
+      <div class="step" style="--c:#17b8a6">
+        <span class="step-num">01</span>
+        <h4>Tell us what's wrong</h4>
+        <p>Answer three quick questions or let our AI triage assistant suggest the right care track for you.</p>
+      </div>
+      <div class="step" style="--c:#4aa8ff">
+        <span class="step-num">02</span>
+        <h4>Pick your doctor</h4>
+        <p>Choose a clinician by specialty, language, rating and price — or let us match the best available one.</p>
+      </div>
+      <div class="step" style="--c:#7c5cff">
+        <span class="step-num">03</span>
+        <h4>Start your visit</h4>
+        <p>HD video, phone or secure chat. Recording off by default, notes shared with you the moment it ends.</p>
+      </div>
+      <div class="step" style="--c:#ff6fa8">
+        <span class="step-num">04</span>
+        <h4>Get your plan</h4>
+        <p>Prescription, lab orders, referrals and follow-up dates delivered in one clear, printable summary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sect sect-tint" id="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Patient Stories</span>
+      <h2 class="sec-title">Rated 4.9 by <span class="grad-text">people who recovered</span></h2>
+      <p class="sec-sub">Real reviews from real visits in the last 90 days.</p>
+    </div>
+    <div class="slider" id="revSlider">
+      <div class="s-track">
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“I woke up at 3am with chest tightness and got a cardiologist on video in six minutes. He spotted an arrhythmia, sent a prescription to my door and followed up two days later. This is genuinely life-saving technology.”</p>
+            <div class="q-user"><img src="images/unsplash-1494790108377-be9c29b29330_120x120.webp" alt="Maya Torres"><span><b>Maya Torres</b><span>Cardiology &middot; Austin, TX</span></span></div>
+          </article>
+        </div>
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“I moved my therapy sessions entirely to PulseCare. Same therapist I trust, no more 40-minute commute, and the notes arrive before I've even closed the laptop.”</p>
+            <div class="q-user"><img src="images/unsplash-1507003211169-0a1dd7228f2d_120x120.webp" alt="Jordan Blake"><span><b>Jordan Blake</b><span>Mental health &middot; Portland, OR</span></span></div>
+          </article>
+        </div>
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“Our daughter is 3 and terrified of doctors. Dr. Marin sang a song on video and talked to her doll. First appointment ever with zero tears. We're loyal customers for life.”</p>
+            <div class="q-user"><img src="images/unsplash-1438761681033-6461ffad8d80_120x120.webp" alt="Priya Raman"><span><b>Priya Raman</b><span>Pediatrics &middot; San Jose, CA</span></span></div>
+          </article>
+        </div>
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“As a nurse I was sceptical. Now I use PulseCare for my own chronic care. The labs synced straight to my chart and my PCP saw everything without me forwarding a single email.”</p>
+            <div class="q-user"><img src="images/unsplash-1500648767791-00dcc994a43e_120x120.webp" alt="Daniel Okoye"><span><b>Daniel Okoye</b><span>Chronic care &middot; Chicago, IL</span></span></div>
+          </article>
+        </div>
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“The at-home kit arrived next morning, phlebotomy took 90 seconds and I had a doctor-reviewed interpretation in my app before dinner. Try doing that with a normal clinic.”</p>
+            <div class="q-user"><img src="images/unsplash-1544005313-94ddf0286df2_120x120.webp" alt="Elena Novak"><span><b>Elena Novak</b><span>Diagnostics &middot; Denver, CO</span></span></div>
+          </article>
+        </div>
+        <div class="s-slide">
+          <article class="quote">
+            <span class="stars"><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i><i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></span>
+            <p>“I travel 200 days a year for work. PulseCare is the only doctor I've found that actually understands my history instead of making me re-explain it every time.”</p>
+            <div class="q-user"><img src="images/unsplash-1506794778202-cad84cf45f1d_120x120.webp" alt="Tom Herrera"><span><b>Tom Herrera</b><span>Primary care &middot; Miami, FL</span></span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="s-nav" data-stagger>
+      <button class="s-btn" data-dir="prev" aria-label="Previous reviews"><i class="fa-solid fa-chevron-left fa-iw" aria-hidden="true"></i></button>
+      <div class="dots"></div>
+      <button class="s-btn" data-dir="next" aria-label="Next reviews"><i class="fa-solid fa-chevron-right fa-iw" aria-hidden="true"></i></button>
+    </div>
+    <div class="stats" style="margin-top:80px" data-stagger>
+      <div class="stat"><i class="fa-solid fa-award fa-iw ic" aria-hidden="true"></i><span class="stat-num" data-count="900" data-dec="0">0</span><p>Licensed clinicians</p></div>
+      <div class="stat"><i class="fa-solid fa-circle-check fa-iw ic" aria-hidden="true"></i><span class="stat-num"><span data-count="98.6" data-dec="1">0</span><span class="suf">%</span></span><p>Issues resolved first visit</p></div>
+      <div class="stat"><i class="fa-solid fa-clock fa-iw ic" aria-hidden="true"></i><span class="stat-num"><span data-count="4.2" data-dec="1">0</span><span class="suf">min</span></span><p>Median wait to a doctor</p></div>
+      <div class="stat"><i class="fa-solid fa-star fa-iw ic" aria-hidden="true"></i><span class="stat-num"><span data-count="4.9" data-dec="1">0</span><span class="suf">/5</span></span><p>Average patient rating</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="app">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">PulseCare App</span>
+        <h2 class="sec-title" style="font-size:clamp(28px,3.8vw,44px)">Your health record, in your pocket</h2>
+        <p>Book in two taps, keep every visit note, track prescriptions and refill with a swipe. The app is free on iOS and Android with offline record access.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>Face-ID sign in</b><p>Bank-grade encryption with biometric access and passcode fallback.</p></span></li>
+          <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>Symptom timeline</b><p>Log temperature, blood pressure and mood to spot patterns early.</p></span></li>
+          <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>Family profiles</b><p>Manage up to six members — kids, parents and partners — from one account.</p></span></li>
+        </ul>
+        <div class="hero-actions" style="margin-bottom:0">
+          <a href="404.html" class="btn">
+            <i class="fa-brands fa-apple fa-iw" aria-hidden="true"></i>
+            App Store
+          </a>
+          <a href="404.html" class="btn btn-white">
+            <i class="fa-brands fa-google-play fa-iw" aria-hidden="true"></i>
+            Google Play
+          </a>
+        </div>
+      </div>
+      <div class="split-media reveal-s">
+        <img src="./images/pulsecare app.webp" alt="Patient using the PulseCare mobile app" data-speed="0.08">
+        <div class="exp-badge"><b>4.8<i class="fa-solid fa-star fa-rating" aria-hidden="true"></i></b><span>48k app ratings</span></div>
+      </div>
+    </div>
+    <div class="cta-band" style="margin-top:80px" data-stagger>
+      <span class="blob blob-3" data-float></span>
+      <div class="grid-lines"></div>
+      <div class="cta-inner">
+        <div>
+          <h2>Your first visit is on us</h2>
+          <p>Join 2.4 million patients and get a free 15-minute consultation with a licensed clinician. No card, no commitment.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="404.html" class="btn btn-white btn-lg">Claim free consult <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" class="btn btn-lg" style="background:transparent;border:1.5px solid rgba(255,255,255,.3);box-shadow:none">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect-tint" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="sec-title">Questions, <span class="grad-text">answered plainly</span></h2>
+      <p class="sec-sub">Everything people ask before their first virtual visit. Still curious? Our care team replies in under an hour.</p>
+    </div>
+    <div class="split-2" style="align-items:start;gap:34px" data-acc-group>
+      <div>
+        <div class="acc">
+          <button class="acc-q">Do I need a webcam or computer?<i></i></button>
+          <div class="acc-a"><p>No. PulseCare works in any modern browser, and you can switch to phone or encrypted SMS chat mid-visit if your connection drops. Most people use a phone — the app or a plain video link both work.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">Are the doctors really licensed?<i></i></button>
+          <div class="acc-a"><p>Every clinician completes primary-source credentialing, holds an unrestricted license in at least one state served by the platform, and is re-verified every two years. You can see license numbers, specialties and board certifications on each doctor's profile before you book.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">What does a visit cost?<i></i></button>
+          <div class="acc-a"><p>Primary care visits are $29, mental health $49 and specialist consults $79. We check your insurance before the visit and show your exact out-of-pocket cost at checkout. Members on the Care+ plan pay nothing for the first three visits each month.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">Can I get a prescription?<i></i></button>
+          <div class="acc-a"><p>Yes, where clinically appropriate and permitted by your state's regulations. Prescriptions are sent electronically to any of 42,000 partner pharmacies, usually ready within 24 hours, or to your preferred local pharmacy.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="acc">
+          <button class="acc-q">What about prescriptions and refills?<i></i></button>
+          <div class="acc-a"><p>Refill requests sit in your app with a one-tap approve button, and we check every refill against your current medication list for interactions before it ships. Automatic refill schedules are available for ongoing prescriptions.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">Is my health data private?<i></i></button>
+          <div class="acc-a"><p>PulseCare is HIPAA compliant with end-to-end encryption in transit and at rest, data residency in the US/EU, granular sharing controls, and a documented zero-data-retention policy on video streams. Video is never recorded unless both you and your doctor explicitly enable it.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">Is telemedicine right for every issue?<i></i></button>
+          <div class="acc-a"><p>Telemedicine covers the large majority of everyday concerns. For chest pain, severe breathing difficulty, stroke symptoms or major trauma, call emergency services first — our app will route you to the right level of care immediately.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q">Can my in-person doctor see my visit notes?<i></i></button>
+          <div class="acc-a"><p>With one tap you can share any visit summary, lab result or prescription with your primary care provider, and we support direct record exchange with 78% of US health systems. Your data is never shared without explicit consent.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="blob blob-1" data-float style="opacity:.22"></span>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-col">
+        <a href="index.html" class="brand">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+          
+        </a>
+        <p>Stackly connects you with licensed clinicians in minutes — video visits, prescriptions, labs and follow-up care in one secure place.</p>
+        <div class="f-social">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube fa-iw" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="404.html">Primary care</a></li>
+          <li><a href="404.html">Mental health</a></li>
+          <li><a href="404.html">Dermatology</a></li>
+          <li><a href="404.html">Pediatrics</a></li>
+          <li><a href="404.html">e-Pharmacy</a></li>
+         
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Get in touch</h5>
+        <ul class="f-contact">
+          <li><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</li>
+          <li><i class="fa-solid fa-phone fa-iw" aria-hidden="true"></i>9876543210</li>
+          <li><i class="fa-solid fa-envelope fa-iw" aria-hidden="true"></i> care@stacklytelemedicine.com</li>
+          
+        </ul>
+       
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span data-year>2026</span> Stackly Telemedicine. All rights reserved.</span>
+      <div class="f-bottom-links">
+        <a href="404.html">Privacy</a><a href="404.html">Policy</a><a href="404.html">Terms</a><a href="404.html">Condition</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

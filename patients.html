@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patients — Stackly Admin Console</title>
+<meta name="description" content="Stackly admin: patient accounts, plan mix, growth and privacy requests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>E</i>
+      <span><b data-user-name>Elena Ruiz</b><span>Operations Admin</span></span>
+    </div>
+
+    <div class="side-label">Operations</div>
+    <nav class="side-nav">
+      <a class="side-link" href="admin.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Overview</a>
+      <a class="side-link active" href="patients.html"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> Patients <span class="badge-n">12</span></a>
+      <a class="side-link" href="clinicians.html"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i> Clinicians</a>
+      <a class="side-link" href="bookings.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Bookings <span class="badge-n">5</span></a>
+      <a class="side-link" href="revenue.html"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i> Revenue</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+    
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search patients, clinicians, invoice IDs…" aria-label="Search" id="globalSearch">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Alerts">
+            <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-toast="Patient export queued — you will get an email when the CSV is ready.">Export CSV</button>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>E</i>
+            <span><b data-user-name>Elena Ruiz</b><span data-user-email>elena@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="admin.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Admin console <span>/</span> <span>Patients</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Patient accounts</h1>
+          <p>18,420 active accounts &middot; 12 flagged or pending verification &middot; refreshed 6 minutes ago</p>
+        </div>
+        <div class="acts">
+          <button class="btn btn-sm btn-ghost" data-toast="Identity verification batch started for 3 pending accounts."><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i> Verify identities</button>
+          <button class="btn btn-sm" data-toast="Invitation link copied — onboarding takes about 4 minutes.">Add patient</button>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+        <div><b>5 privacy requests need review</b><p>2 records exports and 1 deletion request fall inside the 30-day statutory window.</p></div>
+        <a href="#privacy">Open requests &rarr;</a>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>8.1%</span></div>
+          <h3><span data-count="18420" data-dec="0">0</span></h3>
+          <p>Active patients</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>11.4%</span></div>
+          <h3><span data-count="1284" data-dec="0">0</span></h3>
+          <p>New this month</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>6.2%</span></div>
+          <h3><span data-count="12906" data-dec="0">0</span></h3>
+          <p>Care+ members</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i></span><span class="trend down"><i class="fa-solid fa-arrow-down fa-iw" aria-hidden="true"></i>3</span></div>
+          <h3><span data-count="12" data-dec="0">0</span></h3>
+          <p>Flagged or pending</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Patient accounts</h3><p>Recently active &middot; 18,420 total records</p></div>
+          <div class="tool-row" style="margin:0">
+            <div class="search-box" style="padding:8px 16px;flex:none">
+              <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+              <input type="search" placeholder="Filter patients…" data-table-filter="#patientTbl" aria-label="Filter patients">
+            </div>
+            <button class="btn btn-sm btn-ghost" data-toast="Full patient directory opened — 18,420 records.">All patients</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="patientTbl">
+            <thead>
+              <tr>
+                <th style="width:36px"><input type="checkbox" data-select-all aria-label="Select all patients" style="width:18px;height:18px;accent-color:var(--brand)"></th>
+                <th>Patient</th><th>Plan</th><th>Last visit</th><th>Visits</th><th>Status</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Jordan Blake" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1494790108377-be9c29b29330_100x100.webp" alt="Jordan Blake"><span><b>Jordan Blake</b><span>jordan@pulsecare.health</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Today, 9:12 AM</td><td class="amt">18</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Maya Torres" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1438761681033-6461ffad8d80_100x100.webp" alt="Maya Torres"><span><b>Maya Torres</b><span>maya.t@example.com</span></span></span></td>
+                <td>Pay per visit</td>
+                <td>Yesterday</td><td class="amt">7</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Daniel Okoye" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1500648767791-00dcc994a43e_100x100.webp" alt="Daniel Okoye"><span><b>Daniel Okoye</b><span>d.okoye@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Oct 18, 2026</td><td class="amt">42</td><td><span class="pill-state st-amber"><i></i>Payment retry</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Elena Novak" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1544005313-94ddf0286df2_100x100.webp" alt="Elena Novak"><span><b>Elena Novak</b><span>elena.n@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Oct 12, 2026</td><td class="amt">26</td><td><span class="pill-state st-blue"><i></i>Identity pending</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Verify"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Tom Herrera" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1506794778202-cad84cf45f1d_100x100.webp" alt="Tom Herrera"><span><b>Tom Herrera</b><span>t.herrera@example.com</span></span></span></td>
+                <td>Pay per visit</td>
+                <td>Oct 02, 2026</td><td class="amt">3</td><td><span class="pill-state st-red"><i></i>Flagged</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Resolve"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Priya Raman" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1534528741775-53994a69daeb_100x100.webp" alt="Priya Raman"><span><b>Priya Raman</b><span>priya.r@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Sep 28, 2026</td><td class="amt">31</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Aisha Karimi" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1546961329-78bef0414d7c_100x100.webp" alt="Aisha Karimi"><span><b>Aisha Karimi</b><span>a.karimi@example.com</span></span></span></td>
+                <td>Free trial <span class="pill-state st-amber" style="padding:3px 9px;font-size:11px">Day 4</span></td>
+                <td>Not yet booked</td><td class="amt">0</td><td><span class="pill-state st-blue"><i></i>Onboarding</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Complete onboarding"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" aria-label="Select Chen Wei" style="width:18px;height:18px;accent-color:var(--brand)"></td>
+                <td><span class="cell-user"><img src="images/unsplash-1507003211169-0a1dd7228f2d_100x100.webp" alt="Chen Wei"><span><b>Chen Wei</b><span>chen.wei@example.com</span></span></span></td>
+                <td>Care+ <span class="pill-state st-green" style="padding:3px 9px;font-size:11px">Active</span></td>
+                <td>Sep 22, 2026</td><td class="amt">58</td><td><span class="pill-state st-green"><i></i>Good standing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Suspend"><i class="fa-solid fa-ban fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Plan distribution</h3><p>Share of the 18,420 active accounts</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="193 83"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="64 212" stroke-dashoffset="-193"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="19 257" stroke-dashoffset="-257"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="18420" data-dec="0">0</span></b><span>Active patients</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> Care+ membership <b>70%</b></li>
+            <li style="--c:#4aa8ff"><i></i> Pay per visit <b>23%</b></li>
+            <li style="--c:#ffb547"><i></i> Free trial <b>7%</b></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Account engagement</h3><p>Rolling 90-day activity by plan</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>Care+ members <span>92% of target</span></b><div class="pg-bar"><i data-pct="92" style="--c:#17b8a6"></i></div><small>3.4 completed visits per member per quarter</small></div>
+            <div class="pg-item"><b>Pay per visit <span>64% of target</span></b><div class="pg-bar"><i data-pct="64" style="--c:#4aa8ff"></i></div><small>1.6 visits per account per quarter</small></div>
+            <div class="pg-item"><b>Free trial conversion <span>41% of target</span></b><div class="pg-bar"><i data-pct="41" style="--c:#ffb547"></i></div><small>525 of 1,278 trials converted to Care+</small></div>
+            <div class="pg-item"><b>Re-engagement rate <span>38% of target</span></b><div class="pg-bar"><i data-pct="38" style="--c:#7c5cff"></i></div><small>1,204 dormant accounts contacted this quarter</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Patient growth</h3><p>New signups against churned accounts</p></div>
+          <div class="tabs">
+            <button class="tab active">12M</button>
+            <button class="tab">6M</button>
+            <button class="tab">30D</button>
+          </div>
+        </div>
+        <div class="chart-wrap" id="patientGrowth"
+             data-labels="Nov,Dec,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"
+             data-chart='[{"name":"New signups","color":"#17b8a6","data":[412,438,455,470,498,512,540,556,571,604,628,641]},{"name":"Churned","color":"#ff6fa8","data":[148,141,132,126,119,112,104,97,91,86,79,74]}]'></div>
+        <div class="legend">
+          <span style="--c:#17b8a6"><i></i> New signups</span>
+          <span style="--c:#ff6fa8"><i></i> Churned accounts</span>
+        </div>
+      </div>
+
+      <div class="panel" id="privacy" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Privacy &amp; compliance requests</h3><p>5 items pending &middot; statutory windows apply</p></div>
+          <button class="btn btn-sm btn-ghost" data-toast="All 5 requests assigned to the compliance rota.">Assign all</button>
+        </div>
+        <div class="feed">
+          <div class="feed-item"><span class="feed-ic" style="--c:#7c5cff"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <div class="feed-body"><b>Records export request</b><p>Maya Torres &middot; Full visit history, labs and messages</p><time>Submitted 4 hours ago &middot; due in 26 days</time></div>
+          </div>
+          <div class="feed-item"><span class="feed-ic" style="--c:#ff6fa8"><i class="fa-solid fa-box fa-iw" aria-hidden="true"></i></span>
+            <div class="feed-body"><b>Account deletion request</b><p>Chen Wei &middot; Identity re-verified, awaiting confirmation</p><time>Submitted yesterday &middot; due in 29 days</time></div>
+          </div>
+          <div class="feed-item"><span class="feed-ic" style="--c:#17b8a6"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span>
+            <div class="feed-body"><b>Marketing consent withdrawn</b><p>412 accounts &middot; Suppressed across all campaigns</p><time>Processed automatically</time></div>
+          </div>
+          <div class="feed-item"><span class="feed-ic" style="--c:#4aa8ff"><i class="fa-solid fa-circle-exclamation fa-iw" aria-hidden="true"></i></span>
+            <div class="feed-body"><b>Data residency question</b><p>APAC patient &middot; Records held outside region of residence</p><time>Routed to legal 6 hours ago</time></div>
+          </div>
+          <div class="feed-item"><span class="feed-ic" style="--c:#ffb547"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span>
+            <div class="feed-body"><b>Insurance ID re-verification overdue</b><p>3 patients &middot; Claims would be denied without it</p><time>Overdue by 2 days</time></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Quick patient actions</h3><p>Routine account management</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Onboarding invite sent to the new patient.">
+            <span class="q-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span>
+            <b>Invite patient</b><span>Onboarding link by email or SMS</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Identity checks queued for 3 pending accounts.">
+            <span class="q-ic"><i class="fa-solid fa-lock fa-iw" aria-hidden="true"></i></span>
+            <b>Verify identities</b><span>3 accounts pending KYC</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="Records export started — 18,420 accounts, CSV and JSON.">
+            <span class="q-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <b>Export records</b><span>Bulk CSV or JSON archive</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Refund queue opened — 6 payments held for review.">
+            <span class="q-ic"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i></span>
+            <b>Process refunds</b><span>6 payments held for review</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

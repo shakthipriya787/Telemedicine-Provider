@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue — Stackly Admin Console</title>
+<meta name="description" content="Stackly admin: revenue, invoices, care track mix, clinic capacity and payer mix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>E</i>
+      <span><b data-user-name>Elena Ruiz</b><span>Operations Admin</span></span>
+    </div>
+
+    <div class="side-label">Operations</div>
+    <nav class="side-nav">
+      <a class="side-link" href="admin.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Overview</a>
+      <a class="side-link" href="patients.html"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> Patients <span class="badge-n">12</span></a>
+      <a class="side-link" href="clinicians.html"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i> Clinicians</a>
+      <a class="side-link" href="bookings.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Bookings <span class="badge-n">5</span></a>
+      <a class="side-link active" href="revenue.html"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i> Revenue</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+    
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search patients, clinicians, invoice IDs…" aria-label="Search" id="globalSearch">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Alerts">
+            <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-toast="Revenue workbook generated — Q3 and October detail, 14 pages.">Export CSV</button>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>E</i>
+            <span><b data-user-name>Elena Ruiz</b><span data-user-email>elena@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="admin.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Admin console <span>/</span> <span>Revenue</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Revenue &amp; billing</h1>
+          <p>$842k monthly recurring revenue &middot; $986k net revenue in October &middot; figures reconciled 6 minutes ago</p>
+        </div>
+        <div class="acts">
+          <a href="#invoices" class="btn btn-sm btn-ghost"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i> Review invoices</a>
+          <button class="btn btn-sm" data-toast="Payout run scheduled — 912 clinicians, settlement on Oct 31.">Run payouts</button>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+        <div><b>$128k outstanding, 6 invoices past 30 days</b><p>Three are insurance claims awaiting remittance; the rest are patient balances with a retry scheduled.</p></div>
+        <a href="#invoices">Open receivables &rarr;</a>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>12.4%</span></div>
+          <h3>$<span data-count="842" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">k</span></h3>
+          <p>Monthly recurring revenue</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>11.2%</span></div>
+          <h3>$<span data-count="986" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">k</span></h3>
+          <p>Net revenue this month</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>3.1%</span></div>
+          <h3>$<span data-count="45.7" data-dec="1">0</span></h3>
+          <p>Average revenue per patient</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span><span class="trend down"><i class="fa-solid fa-arrow-down fa-iw" aria-hidden="true"></i>8.4%</span></div>
+          <h3>$<span data-count="128" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">k</span></h3>
+          <p>Outstanding receivables</p>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Revenue &amp; visit volume</h3><p>Net revenue against completed consultations</p></div>
+            <div class="tabs" data-tab-group="#revChart">
+              <button class="tab active" data-range="1M">1M</button>
+              <button class="tab" data-range="Q">Q</button>
+              <button class="tab" data-range="Y">Y</button>
+            </div>
+          </div>
+          <div class="chart-wrap" id="revChart"
+               data-labels="W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12"
+               data-chart='[{"name":"Net revenue","color":"#17b8a6","data":[52,58,55,63,61,68,72,69,76,81,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[31,34,33,38,37,41,44,42,46,49,47,52]}]'
+               data-series-map='{"1M":{"labels":["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[52,58,55,63,61,68,72,69,76,81,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[31,34,33,38,37,41,44,42,46,49,47,52]}]},"Q":{"labels":["Apr","May","Jun"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[71,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[43,47,52]}]},"Y":{"labels":["Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct"],"series":[{"name":"Net revenue","color":"#17b8a6","data":[54,57,59,61,64,66,68,71,72,75,78,86]},{"name":"Visits (hundreds)","color":"#7c5cff","data":[33,35,36,37,39,40,41,43,44,46,47,52]}]}}'
+               data-active="1M"></div>
+          <div class="legend">
+            <span style="--c:#17b8a6"><i></i> Net revenue ($k)</span>
+            <span style="--c:#7c5cff"><i></i> Completed visits (hundreds)</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Care track mix</h3><p>Share of visits this month</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="104 172"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#7c5cff" stroke-dasharray="63 213" stroke-dashoffset="-104"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="48 228" stroke-dashoffset="-167"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ff6fa8" stroke-dasharray="33 243" stroke-dashoffset="-215"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="28 248" stroke-dashoffset="-248"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="48900" data-dec="0">0</span></b><span>Total visits</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> Primary &amp; urgent care <b>38%</b></li>
+            <li style="--c:#7c5cff"><i></i> Mental health <b>23%</b></li>
+            <li style="--c:#4aa8ff"><i></i> Specialists <b>17%</b></li>
+            <li style="--c:#ff6fa8"><i></i> Chronic care <b>12%</b></li>
+            <li style="--c:#ffb547"><i></i> Diagnostics <b>10%</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="invoices" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Recent invoices</h3><p>Patient billing and insurance claims</p></div>
+          <div class="tool-row" style="margin:0">
+            <div class="search-box" style="padding:8px 16px;flex:none">
+              <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+              <input type="search" placeholder="Filter invoices…" data-table-filter="#invoiceTbl" aria-label="Filter invoices">
+            </div>
+            <button class="btn btn-sm btn-ghost" data-toast="Reminders sent for 6 past-due invoices.">Chase overdue</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="invoiceTbl" style="min-width:680px">
+            <thead><tr><th>Invoice</th><th>Patient</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td><b>#INV-88241</b></td><td>Jordan Blake</td><td>Oct 28, 2026</td><td class="amt">$1,240.00</td><td><span class="pill-state st-green"><i></i>Paid</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Download"><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#INV-88237</b></td><td>Maya Torres</td><td>Oct 27, 2026</td><td class="amt">$79.00</td><td><span class="pill-state st-green"><i></i>Paid</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Download"><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#INV-88229</b></td><td>Daniel Okoye</td><td>Oct 24, 2026</td><td class="amt">$1,240.00</td><td><span class="pill-state st-red"><i></i>Past due</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Retry payment"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Message"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#INV-88213</b></td><td>Jordan Blake</td><td>Oct 22, 2026</td><td class="amt">$79.00</td><td><span class="pill-state st-blue"><i></i>Refunded</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Download"><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#INV-88208</b></td><td>Priya Raman</td><td>Oct 21, 2026</td><td class="amt">$2,150.00</td><td><span class="pill-state st-green"><i></i>Paid</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Download"><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#INV-88196</b></td><td>Grace Liu</td><td>Oct 18, 2026</td><td class="amt">$540.00</td><td><span class="pill-state st-amber"><i></i>Processing</span></td>
+                <td><div class="row-act"><button class="act-btn" aria-label="View"><i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i></button><button class="act-btn" aria-label="Download"><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Clinic capacity</h3><p>Utilisation vs target by region</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>West Coast <span>92% of target</span></b><div class="pg-bar"><i data-pct="92" style="--c:#17b8a6"></i></div><small>14 clinics &middot; 214 clinicians</small></div>
+            <div class="pg-item"><b>Northeast <span>86% of target</span></b><div class="pg-bar"><i data-pct="86" style="--c:#4aa8ff"></i></div><small>11 clinics &middot; 178 clinicians</small></div>
+            <div class="pg-item"><b>Midwest &amp; South <span>74% of target</span></b><div class="pg-bar"><i data-pct="74" style="--c:#7c5cff"></i></div><small>9 clinics &middot; 141 clinicians</small></div>
+            <div class="pg-item"><b>APAC &amp; EU <span>61% of target</span></b><div class="pg-bar"><i data-pct="61" style="--c:#ffb547"></i></div><small>8 clinics &middot; 96 clinicians</small></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Payer mix</h3><p>How October revenue was collected</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>Insurance claims <span>54% of revenue</span></b><div class="pg-bar"><i data-pct="100" style="--c:#17b8a6"></i></div><small>$532k billed &middot; 41-day average remittance</small></div>
+            <div class="pg-item"><b>Care+ direct <span>28% of revenue</span></b><div class="pg-bar"><i data-pct="52" style="--c:#4aa8ff"></i></div><small>$276k collected &middot; auto-renewed memberships</small></div>
+            <div class="pg-item"><b>Self-pay <span>12% of revenue</span></b><div class="pg-bar"><i data-pct="22" style="--c:#ff6fa8"></i></div><small>$118k collected &middot; 2 failed retries this week</small></div>
+            <div class="pg-item"><b>Employer plans <span>6% of revenue</span></b><div class="pg-bar"><i data-pct="11" style="--c:#ffb547"></i></div><small>$60k invoiced &middot; 9 corporate accounts</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head"><div><h3>Quick revenue actions</h3><p>Billing and finance shortcuts</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Payout run scheduled — 912 clinicians, settlement on Oct 31.">
+            <span class="q-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span>
+            <b>Run payouts</b><span>912 clinicians this cycle</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Refund queue opened — 6 payments held for review.">
+            <span class="q-ic"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i></span>
+            <b>Issue refunds</b><span>6 payments held for review</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="Revenue workbook generated — Q3 and October detail, 14 pages.">
+            <span class="q-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <b>Export report</b><span>Revenue, bookings, outcomes</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Pricing editor opened — Care+ tiers and pay-per-visit rates.">
+            <span class="q-ic"><i class="fa-solid fa-award fa-iw" aria-hidden="true"></i></span>
+            <b>Update pricing</b><span>Care+ tiers and visit rates</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

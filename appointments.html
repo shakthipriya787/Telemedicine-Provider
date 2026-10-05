@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointments — Stackly</title>
+<meta name="description" content="Manage your Stackly appointments: upcoming video and in-person visits, reschedule, and prepare for your next visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>J</i>
+      <span><b data-user-name>Jordan Blake</b><span>Care+ Member</span></span>
+    </div>
+
+    <div class="side-label">Overview</div>
+    <nav class="side-nav">
+      <a class="side-link" href="dashboard.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Dashboard</a>
+      <a class="side-link active" href="appointments.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Appointments</a>
+      <a class="side-link" href="messages.html"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Messages <span class="badge-n">3</span></a>
+      <a class="side-link" href="prescriptions.html"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i> Prescriptions</a>
+      <a class="side-link" href="lab-results.html"><i class="fa-solid fa-inbox fa-iw" aria-hidden="true"></i> Lab Results</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search visits, doctors…" aria-label="Search appointments">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <a href="contact.html" class="btn btn-sm">New visit</a>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>J</i>
+            <span><b data-user-name>Jordan Blake</b><span data-user-email>jordan@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="dashboard.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Dashboard <span>/</span> <span>Appointments</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Your appointments</h1>
+          <p>4 upcoming visits in the next 30 days &mdash; 3 by video, 1 in person.</p>
+        </div>
+        <div class="acts">
+          <a href="contact.html" class="btn btn-sm btn-ghost"><i class="fa-solid fa-envelope fa-iw" aria-hidden="true"></i> Book a visit</a>
+          <button class="btn btn-sm" data-toast="Reschedule mode on &mdash; pick any visit to move it.">Reschedule</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>+2</span></div>
+          <h3><span data-count="4" data-dec="0">0</span></h3>
+          <p>Upcoming visits</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i></span><span class="trend up">Most used</span></div>
+          <h3><span data-count="3" data-dec="0">0</span></h3>
+          <p>Video visits</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i></span><span class="trend up">1 clinic</span></div>
+          <h3><span data-count="1" data-dec="0">0</span></h3>
+          <p>In-person visits</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span><span class="trend up">-2 min</span></div>
+          <h3><span data-count="4" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">min</span></h3>
+          <p>Average video wait</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Visits</h3><p>Upcoming and recent appointments</p></div>
+          <div class="chips start" data-filter="#apptList">
+            <button class="chip active" data-cat="all">All</button>
+            <button class="chip" data-cat="video">Video</button>
+            <button class="chip" data-cat="inperson">In person</button>
+            <button class="chip" data-cat="done">Completed</button>
+          </div>
+        </div>
+        <div class="dash-grid" style="gap:12px;margin:0" id="apptList" data-stagger>
+          <div class="app-card" style="--c:#17b8a6" data-cats="video">
+            <span class="app-date"><span>OCT</span><b>18</b></span>
+            <div class="app-info"><b>Annual Physical Review</b><p>Dr. Lena Fischer &middot; Family Medicine</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 10:30 AM</span><span><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i> Video visit</span><span class="pill-state st-green"><i></i>Confirmed</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Join visit" data-toast="Connecting you to Dr. Lena Fischer &mdash; check your camera and microphone."><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" aria-label="Reschedule" data-toast="Reschedule options opened &mdash; 6 slots available this week."><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#7c5cff" data-cats="video">
+            <span class="app-date"><span>OCT</span><b>24</b></span>
+            <div class="app-info"><b>Therapy Session #14</b><p>Dr. Ravi Mehta &middot; Mental Health</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 6:00 PM</span><span><i class="fa-solid fa-headset fa-iw" aria-hidden="true"></i> Encrypted</span><span class="pill-state st-green"><i></i>Confirmed</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Join visit" data-toast="Connecting you to Dr. Ravi Mehta &mdash; check your camera and microphone."><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" aria-label="Reschedule" data-toast="Reschedule options opened &mdash; 4 evening slots available."><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#4aa8ff" data-cats="video">
+            <span class="app-date"><span>NOV</span><b>02</b></span>
+            <div class="app-info"><b>Lab Result Review</b><p>Dr. Amara Osei &middot; Internal Medicine</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 9:00 AM</span><span><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i> Video visit</span><span class="pill-state st-blue"><i></i>Pending intake</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Join visit" data-toast="Intake form to complete before Nov 2 &mdash; 3 questions left."><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" aria-label="Reschedule" data-toast="Reschedule options opened &mdash; 9 morning slots available."><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#ffb547" data-cats="inperson">
+            <span class="app-date"><span>NOV</span><b>14</b></span>
+            <div class="app-info"><b>Dermatology Follow-up</b><p>Dr. Sofia Marin &middot; Dermatology</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 3:15 PM</span><span><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i> Midtown Clinic, Suite 400</span><span class="pill-state st-amber"><i></i>Needs address</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Get directions" data-toast="Directions sent to your phone &mdash; 12 min from your address."><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" aria-label="Reschedule" data-toast="Reschedule options opened &mdash; clinic has 3 openings this month."><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#17b8a6" data-cats="done">
+            <span class="app-date"><span>OCT</span><b>09</b></span>
+            <div class="app-info"><b>Blood Pressure Check</b><p>Dr. Lena Fischer &middot; Family Medicine</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 11:15 AM</span><span class="pill-state st-green"><i></i>Completed</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="View summary" data-toast="Visit summary opened &mdash; 3 notes and 1 new prescription."><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></button>
+              <a href="messages.html" class="btn-icon-sm" aria-label="Message doctor"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#7c5cff" data-cats="video done">
+            <span class="app-date"><span>SEP</span><b>26</b></span>
+            <div class="app-info"><b>Therapy Session #13</b><p>Dr. Ravi Mehta &middot; Mental Health</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 6:00 PM</span><span class="pill-state st-green"><i></i>Completed</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="View summary" data-toast="Session notes unlocked &mdash; sleep log review added to your plan."><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></button>
+              <a href="messages.html" class="btn-icon-sm" aria-label="Message doctor"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#4aa8ff" data-cats="inperson done">
+            <span class="app-date"><span>SEP</span><b>12</b></span>
+            <div class="app-info"><b>Annual Flu Vaccine</b><p>Midtown Clinic &middot; Nurse-led</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 2:40 PM</span><span class="pill-state st-green"><i></i>Completed</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="View certificate" data-toast="Immunisation certificate downloaded to your records."><i class="fa-solid fa-upload fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Visits per month</h3><p>Last 12 months by visit type</p></div></div>
+          <div class="chart-wrap" id="apptChart"
+               data-labels="Nov,Dec,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"
+               data-chart='[{"name":"Video visits","color":"#17b8a6","data":[2,1,3,2,2,3,1,2,3,2,4,3]},{"name":"In-person visits","color":"#7c5cff","data":[1,0,1,1,0,1,1,0,1,1,0,1]}]'></div>
+          <div class="legend">
+            <span style="--c:#17b8a6"><i></i> Video visits</span>
+            <span style="--c:#7c5cff"><i></i> In-person visits</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Prepare for your visit</h3><p>Tap a topic for what to do beforehand</p></div></div>
+          <div class="acc active">
+            <button class="acc-q" type="button">Video visit checklist <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+            <div class="acc-a"><p>Test your camera and microphone in the app 10 minutes early, charge your device, and use a private, well-lit space. Have your medication list and latest <a href="lab-results.html" style="color:var(--brand-d);font-weight:700">lab results</a> open on screen.</p></div>
+          </div>
+          <div class="acc">
+            <button class="acc-q" type="button">What to bring in person <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+            <div class="acc-a"><p>Photo ID, your insurance card, a written list of questions, and any home readings you have logged. Arrive 15 minutes early to complete check-in.</p></div>
+          </div>
+          <div class="acc">
+            <button class="acc-q" type="button">Rescheduling &amp; cancellation <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+            <div class="acc-a"><p>Move or cancel any visit free of charge up to 2 hours before the start time. Late cancellations and no-shows are billed at $25.</p></div>
+          </div>
+          <div class="acc">
+            <button class="acc-q" type="button">Insurance &amp; billing <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+            <div class="acc-a"><p>Video visits are covered in full by Care+. In-person visits are billed after your plan's $25 copay. Statements appear in your account within 3 days of the visit.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Quick actions</h3><p>Common scheduling tasks</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Video visit requested &mdash; a clinician will join within 5 minutes.">
+            <span class="q-ic"><i class="fa-solid fa-video fa-iw" aria-hidden="true"></i></span>
+            <b>Same-day video visit</b><span>Average wait 4 min</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="Reschedule mode on &mdash; pick any visit to move it.">
+            <span class="q-ic"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span>
+            <b>Reschedule a visit</b><span>6 slots this week</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Calendar file downloaded &mdash; all 4 visits added.">
+            <span class="q-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span>
+            <b>Add to calendar</b><span>.ics &middot; Google &middot; Outlook</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Referral request sent to your care team.">
+            <span class="q-ic"><i class="fa-solid fa-user-plus fa-iw" aria-hidden="true"></i></span>
+            <b>Request a referral</b><span>Usually same day</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

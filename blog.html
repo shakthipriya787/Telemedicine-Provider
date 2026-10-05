@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Journal Stackly Blog</title>
+<meta name="description" content="Evidence-based health writing from stackly clinicians: telehome insights, mental health, chronic care, diagnostics, nutrition and wellness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body>
+
+
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <div class="nav-drawer-brand">
+        <a href="index.html" class="brand">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+      </div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-drawer-foot">
+        <a href="login.html" class="btn btn-ghost btn-block">Log In</a>
+        <a href="signup.html" class="btn btn-block">Sign Up</a>
+        <a href="tel:9876543210" class="drawer-note">
+          <i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>
+          24/7 care desk &middot; 9876543210
+        </a>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-sm btn-ghost">Log In</a>
+      <a href="signup.html" class="btn btn-sm">Sign Up</a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="banner" id="journal">
+  <span class="blob blob-1" data-float></span>
+  <span class="banner-shape" data-float></span>
+  <div class="container hero-intro">
+    <span class="eyebrow">The Health Journal</span>
+    <h1>Medicine explained by the people <span class="grad-text">who practise it</span></h1>
+    <p>No wellness hype, no miracle cures. Just what our clinicians wish patients knew â€” reviewed by a medical director before it ever reaches you.</p>
+    <div class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span><span class="cur">Blog</span>
+    </div>
+    <div class="banner-stat-row">
+      <div><b data-count="240" data-dec="0">0</b><span>Articles published</span></div>
+      <div><b data-count="38">0</b><span>Clinical specialties</span></div>
+      <div><b data-count="186" data-dec="0">0</b><span>K newsletter readers</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect-tint" id="featured">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Editor's Pick</span>
+      <h2 class="sec-title">The one to <span class="grad-text">read first</span></h2>
+      <p class="sec-sub">Selected by our medical director this week.</p>
+    </div>
+    <div class="feature-post reveal-s">
+      <div class="fp-media">
+        <img src="images/unsplash-1584982751601-97dcc096659c_1000x800.webp" alt="Editorial feature article">
+        <button class="play-btn" aria-label="Play video"><i class="fa-solid fa-play fa-iw" aria-hidden="true"></i></button>
+      </div>
+      <div class="fp-body">
+        <span class="eyebrow">Telemedicine &middot; 12 min read</span>
+        <h2>The honest truth about what a video visit can and can't tell you</h2>
+        <p>Telemedicine is not a lesser version of an in-person appointment â€” it's a different instrument with its own strengths. A cardiologist sees rhythm on a screen that a GP might miss in a noisy waiting room; a dermatologist sees colour on a 12-megapixel phone. But some things genuinely require hands, and pretending otherwise puts people at risk. Here's how our clinicians decide.</p>
+        <div class="post-foot">
+          <img src="images/unsplash-1612349317150-e413f6a5b16d_120x120.webp" alt="Dr. Marcus Cole">
+          <span><b>Dr. Marcus Cole</b><span>Cardiology &middot; Reviewed by Medical Director</span></span>
+        </div>
+        <a href="404.html" class="btn" style="margin-top:26px;align-self:flex-start">Read the article <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="categories-blog">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Topics</span>
+      <h2 class="sec-title">Filter by what <span class="grad-text-2">you need</span></h2>
+      <p class="sec-sub">Six desks our clinicians write from.</p>
+    </div>
+    <div class="chips reveal" data-filter="#postList">
+      <span class="chip active" data-cat="all">All articles</span>
+      <span class="chip" data-cat="tele">Telemedicine</span>
+      <span class="chip" data-cat="mental">Mental health</span>
+      <span class="chip" data-cat="chronic">Chronic care</span>
+      <span class="chip" data-cat="skin">Skin &amp; hair</span>
+      <span class="chip" data-cat="kids">Kids</span>
+      <span class="chip" data-cat="nutrition">Nutrition</span>
+    </div>
+  </div>
+</section>
+
+<section class="sect-tint sect" id="latest">
+  <div class="container">
+    <div class="post-grid" id="postList" data-stagger>
+      <article class="post" data-cats="tele">
+        <div class="post-media"><img src="./images/blog telemedicine.webp" alt="Primary care article"><span class="post-cat" style="--c:#0b8b7e">Telemedicine</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>7 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Oct 12, 2026</span></div>
+          <h3>Five questions to ask before you end a virtual visit</h3>
+          <p>A visit averages 15 minutes. These five questions are the difference between leaving with a plan and leaving with a vague impression.</p>
+          <div class="post-foot"><img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer"><span><b>Dr. Lena Fischer</b><span>Family Medicine</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="mental">
+        <div class="post-media"><img src="./images/blog mental1.webp" alt="Mental health article"><span class="post-cat" style="--c:#7c5cff">Mental health</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>9 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Oct 08, 2026</span></div>
+          <h3>Why therapy feels awkward on camera - and how to fix it</h3>
+          <p>Clinical research on telehealth therapy shows comparable outcomes. The awkwardness is real though, and it's a setup problem, not a you problem.</p>
+          <div class="post-foot"><img src="images/unsplash-1582750433449-648ed127bb54_120x120.webp" alt="Dr. Ravi Mehta"><span><b>Dr. Ravi Mehta</b><span>Psychiatry</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="chronic">
+        <div class="post-media"><img src="images/unsplash-1579684385127-1ef15d508118_700x450.webp" alt="Diabetes management article"><span class="post-cat" style="--c:#4aa8ff">Chronic care</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>11 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Oct 02, 2026</span></div>
+          <h3>HbA1c is not your average - why that number misleads patients</h3>
+          <p>Your A1c is a clever statistical trick with one significant blind spot. Here's what to ask instead and how to read your own trend line.</p>
+          <div class="post-foot"><img src="images/unsplash-1594824476967-48c8b964273f_120x120.webp" alt="Dr. Amara Osei"><span><b>Dr. Amara Osei</b><span>Endocrinology</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="skin">
+        <div class="post-media"><img src="images/unsplash-1594824476967-48c8b964273f_700x450.webp" alt="Skin health article"><span class="post-cat" style="--c:#ff6fa8">Skin &amp; hair</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>6 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Sep 26, 2026</span></div>
+          <h3>The ABCDE mole rule, and when "E" is the one that saves you</h3>
+          <p>Most people have learned ABCDE. The part almost everyone forgets is E â€” evolution. Six changes to watch for in a single spot.</p>
+          <div class="post-foot"><img src="images/unsplash-1594824476967-48c8b964273f_120x120.webp" alt="Dr. Amara Osei"><span><b>Dr. Amara Osei</b><span>Dermatology</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="kids">
+        <div class="post-media"><img src="images/unsplash-1584982751601-97dcc096659c_700x450.webp" alt="Pediatrics article"><span class="post-cat" style="--c:#ffb547">Kids</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>8 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Sep 19, 2026</span></div>
+          <h3>Fever triage for parents: the numbers that actually matter</h3>
+          <p>Under-threes get judged differently, and age changes everything. A paediatrician explains the thresholds, and the three symptoms that override the number.</p>
+          <div class="post-foot"><img src="images/unsplash-1584982751601-97dcc096659c_120x120.webp" alt="Dr. Sofia Marin"><span><b>Dr. Sofia Marin</b><span>Pediatrics</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="nutrition">
+        <div class="post-media"><img src="./images/blog nutrition.webp" alt="Nutrition article"><span class="post-cat" style="--c:#17b8a6">Nutrition</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>10 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Sep 12, 2026</span></div>
+          <h3>Protein, again â€” but this time with the maths you'll actually use</h3>
+          <p>Every dietitian says "eat more protein." Very few tell you what that looks like for a 58-year-old who strength trains twice a week. Let's do the arithmetic.</p>
+          <div class="post-foot"><img src="images/unsplash-1559839734-2b71ea197ec2_120x120.webp" alt="Dr. Lena Fischer"><span><b>Dr. Lena Fischer</b><span>Nutrition</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="tele">
+        <div class="post-media"><img src="./images/blog telemedicine2.webp" alt="Privacy article"><span class="post-cat" style="--c:#0b8b7e">Telemedicine</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>7 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Sep 05, 2026</span></div>
+          <h3>Is your video really private? A security walkthrough</h3>
+          <p>End-to-end encryption, zero data retention and the three settings that change your privacy posture. Written by our security lead, no marketing language.</p>
+          <div class="post-foot"><img src="images/unsplash-1519085360753-af0119f7cbe7_120x120.webp" alt="Elena Ruiz"><span><b>Elena Ruiz</b><span>Chief Technology Officer</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="mental">
+        <div class="post-media"><img src="./images/blog mental2.webp" alt="Sleep article"><span class="post-cat" style="--c:#7c5cff">Mental health</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>9 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Aug 28, 2026</span></div>
+          <h3>Sleep is a vital sign how to read yours from home</h3>
+          <p>Three free measurements, no wearable required, and the thresholds that tell you it's worth a conversation with a doctor.</p>
+          <div class="post-foot"><img src="images/unsplash-1582750433449-648ed127bb54_120x120.webp" alt="Dr. Ravi Mehta"><span><b>Dr. Ravi Mehta</b><span>Psychiatry</span></span></div>
+        </div>
+      </article>
+      <article class="post" data-cats="chronic">
+        <div class="post-media"><img src="images/unsplash-1631217868264-e5b90bb7e133_700x450.webp" alt="At-home diagnostics article"><span class="post-cat" style="--c:#4aa8ff">Chronic care</span></div>
+        <div class="post-body">
+          <div class="post-meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i>6 min</span><span><i class="fa-solid fa-calendar-days fa-iw" aria-hidden="true"></i>Aug 21, 2026</span></div>
+          <h3>At-home blood panels: which markers earn their keep?</h3>
+          <p>There are 84 markers in a standard panel. Most are noise for a healthy 30-year-old. A doctor explains the eight that actually change decisions.</p>
+          <div class="post-foot"><img src="images/unsplash-1579684385127-1ef15d508118_120x120.webp" alt="Dr. Amara Osei"><span><b>Dr. Amara Osei</b><span>Internal Medicine</span></span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect-dark" id="popular">
+  <span class="blob blob-2" data-float style="opacity:.2"></span>
+  <div class="container">
+    <div class="split-2" style="gap:52px;align-items:start">
+      <div class="reveal">
+        <span class="eyebrow">Most Read</span>
+        <h2 class="sec-title" style="font-size:clamp(26px,3.4vw,38px)">What readers keep coming back to</h2>
+        <p style="margin-top:16px;max-width:520px">The ten articles with the highest completion rates this quarter â€” usually because people are dealing with something right now.</p>
+        <a href="404.html" class="btn btn-white" style="margin-top:30px">Browse the archive <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+      </div>
+      <div class="rank-list reveal-s">
+        <a class="rank" href="404.html" style="--c:#17b8a6"><b>01</b><img src="images/unsplash-1584982751601-97dcc096659c_200x200.webp" alt="Fever triage"><span><h4>The fever numbers that actually matter</h4><span class="rmeta"><span>Paediatrics</span><span>8 min</span><span>41k reads</span></span></span></a>
+        <a class="rank" href="404.html" style="--c:#7c5cff"><b>02</b><img src="images/unsplash-1573497019940-1c28c88b4f3e_200x200.webp" alt="Anxiety article"><span><h4>Separating a bad week from anxiety</h4><span class="rmeta"><span>Mental health</span><span>11 min</span><span>38k reads</span></span></span></a>
+        <a class="rank" href="404.html" style="--c:#4aa8ff"><b>03</b><img src="images/unsplash-1579684385127-1ef15d508118_200x200.webp" alt="Blood pressure article"><span><h4>Home blood pressure, read properly</h4><span class="rmeta"><span>Chronic care</span><span>7 min</span><span>33k reads</span></span></span></a>
+        <a class="rank" href="404.html" style="--c:#ff6fa8"><b>04</b><img src="images/unsplash-1594824476967-48c8b964273f_200x200.webp" alt="Eczema article"><span><h4>Eczema flares: what actually helps</h4><span class="rmeta"><span>Dermatology</span><span>9 min</span><span>29k reads</span></span></span></a>
+        <a class="rank" href="404.html" style="--c:#ffb547"><b>05</b><img src="images/unsplash-1511174511562-5f7f18b874f8_200x200.webp" alt="UTI article"><span><h4>Why your UTI keeps coming back</h4><span class="rmeta"><span>Primary care</span><span>8 min</span><span>26k reads</span></span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sect sect-tint" id="authors">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Writers</span>
+      <h2 class="sec-title">Clinicians who write, <span class="grad-text-2">not ghosts</span></h2>
+      <p class="sec-sub">Every byline belongs to someone with an active clinical license. Every article is reviewed before publication.</p>
+    </div>
+    <div class="author-strip" data-stagger>
+      <article class="au">
+        <img src="images/unsplash-1612349317150-e413f6a5b16d_200x200.webp" alt="Dr. Marcus Cole">
+        <div><h4>Dr. Marcus Cole</h4><p class="au-role">Cardiology &middot; 42 articles</p><p>Writes about heart rhythm, blood pressure and why the numbers on your cuff disagree with each other.</p></div>
+      </article>
+      <article class="au">
+        <img src="images/unsplash-1573497019940-1c28c88b4f3e_200x200.webp" alt="Dr. Priya Shah">
+        <div><h4>Dr. Priya Shah</h4><p class="au-role">Clinical operations &middot; 31 articles</p><p>Covers behavioural health, burnout in caregivers and the reality of navigating mental health systems.</p></div>
+      </article>
+      <article class="au">
+        <img src="images/unsplash-1594824476967-48c8b964273f_200x200.webp" alt="Dr. Amara Osei">
+        <div><h4>Dr. Amara Osei</h4><p class="au-role">Dermatology &middot; 28 articles</p><p>Focuses on skin, hair and the conditions people keep meaning to ask about at 1am.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <span class="blob blob-1" data-float style="opacity:.22"></span>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-col">
+        <a href="index.html" class="brand">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+          
+        </a>
+        <p>Stackly connects you with licensed clinicians in minutes — video visits, prescriptions, labs and follow-up care in one secure place.</p>
+        <div class="f-social">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in fa-iw" aria-hidden="true"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube fa-iw" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="404.html">Primary care</a></li>
+          <li><a href="404.html">Mental health</a></li>
+          <li><a href="404.html">Dermatology</a></li>
+          <li><a href="404.html">Pediatrics</a></li>
+          <li><a href="404.html">e-Pharmacy</a></li>
+         
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Get in touch</h5>
+        <ul class="f-contact">
+          <li><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</li>
+          <li><i class="fa-solid fa-phone fa-iw" aria-hidden="true"></i>9876543210</li>
+          <li><i class="fa-solid fa-envelope fa-iw" aria-hidden="true"></i> care@stacklytelemedicine.com</li>
+          
+        </ul>
+       
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span data-year>2026</span> Stackly Telemedicine. All rights reserved.</span>
+      <div class="f-bottom-links">
+        <a href="404.html">Privacy</a><a href="404.html">Policy</a><a href="404.html">Terms</a><a href="404.html">Condition</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

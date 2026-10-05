@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Results — Stackly</title>
+<meta name="description" content="Your Stackly lab results: reference ranges, 12-month trends and plain-English explanations from your care team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body lab-results-page">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>J</i>
+      <span><b data-user-name>Jordan Blake</b><span>Care+ Member</span></span>
+    </div>
+
+    <div class="side-label">Overview</div>
+    <nav class="side-nav">
+      <a class="side-link" href="dashboard.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Dashboard</a>
+      <a class="side-link" href="appointments.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Appointments</a>
+      <a class="side-link" href="messages.html"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Messages <span class="badge-n">3</span></a>
+      <a class="side-link" href="prescriptions.html"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i> Prescriptions</a>
+      <a class="side-link active" href="lab-results.html"><i class="fa-solid fa-inbox fa-iw" aria-hidden="true"></i> Lab Results</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search tests, panels…" aria-label="Search lab results">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <a href="contact.html" class="btn btn-sm">New visit</a>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>J</i>
+            <span><b data-user-name>Jordan Blake</b><span data-user-email>jordan@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="dashboard.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Dashboard <span>/</span> <span>Lab Results</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Lab results</h1>
+          <p>Every result is reviewed by a clinician before you see it, with plain-English notes attached.</p>
+        </div>
+        <div class="acts">
+          <a href="messages.html" class="btn btn-sm btn-ghost"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Ask about a result</a>
+          <button class="btn btn-sm" data-toast="At-home lab kit ordered &mdash; arrives tomorrow.">Order a lab kit</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-flask fa-iw" aria-hidden="true"></i></span><span class="trend up">+8</span></div>
+          <h3><span data-count="24" data-dec="0">0</span></h3>
+          <p>Tests this year</p>
+        </div>
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span><span class="trend up">+4%</span></div>
+          <h3><span data-count="92" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">%</span></h3>
+          <p>Results in range</p>
+        </div>
+        <div class="kpi" style="--c:#ffb547">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i></span><span class="trend down">1 to watch</span></div>
+          <h3><span data-count="2" data-dec="0">0</span></h3>
+          <p>Out of range</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span><span class="trend up">Reviewed</span></div>
+          <h3><span data-count="14" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">Oct</span></h3>
+          <p>Last full panel</p>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-circle-info fa-iw" aria-hidden="true"></i>
+        <div><b>Annual bloodwork is due</b><p>Your last full panel was 13 months ago. Order an at-home kit or book a lab draw at a nearby clinic.</p></div>
+        <button class="btn btn-sm" data-toast="At-home lab kit ordered &mdash; arrives tomorrow.">Order kit</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>All results</h3><p>Reviewed by your care team</p></div>
+          <span class="pill-state st-green"><i></i>Clinician reviewed</span>
+        </div>
+        <div class="tool-row">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+            <input type="search" data-table-filter="#labTable" placeholder="Search tests, dates or values…" aria-label="Search lab results table">
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="labTable">
+            <thead><tr><th>Test</th><th>Date</th><th>Result</th><th>Reference range</th><th>Trend</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">HbA1c</b><br><span style="font-size:12.5px;color:var(--muted)">Glycated haemoglobin</span></td><td>Oct 14</td><td class="amt">5.4%</td><td>4.0 &ndash; 5.6%</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="5.9,5.8,5.7,5.7,5.6,5.6,5.5,5.4"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Total cholesterol</b><br><span style="font-size:12.5px;color:var(--muted)">Lipid panel</span></td><td>Oct 14</td><td class="amt">172 mg/dL</td><td>&lt; 200 mg/dL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="198,194,189,186,182,179,175,172"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">LDL cholesterol</b><br><span style="font-size:12.5px;color:var(--muted)">"Bad" cholesterol</span></td><td>Oct 14</td><td class="amt">96 mg/dL</td><td>&lt; 100 mg/dL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="124,120,117,113,109,105,100,96"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">HDL cholesterol</b><br><span style="font-size:12.5px;color:var(--muted)">"Good" cholesterol</span></td><td>Oct 14</td><td class="amt">58 mg/dL</td><td>&gt; 50 mg/dL</td><td><svg class="spark mini" style="--c:#4aa8ff" data-spark="48,49,51,52,54,55,57,58"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Vitamin D</b><br><span style="font-size:12.5px;color:var(--muted)">25-hydroxy</span></td><td>Oct 14</td><td class="amt">24 ng/mL</td><td>30 &ndash; 100 ng/mL</td><td><svg class="spark mini" style="--c:#ffb547" data-spark="18,19,20,21,22,23,23,24"></svg></td><td><span class="pill-state st-amber"><i></i>Low</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Triglycerides</b><br><span style="font-size:12.5px;color:var(--muted)">Lipid panel</span></td><td>Oct 14</td><td class="amt">118 mg/dL</td><td>&lt; 150 mg/dL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="142,138,134,130,127,123,120,118"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">TSH</b><br><span style="font-size:12.5px;color:var(--muted)">Thyroid</span></td><td>Sep 02</td><td class="amt">1.8 mIU/L</td><td>0.4 &ndash; 4.0 mIU/L</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="2.4,2.3,2.1,2.1,2.0,1.9,1.9,1.8"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Creatinine</b><br><span style="font-size:12.5px;color:var(--muted)">Kidney function</span></td><td>Sep 02</td><td class="amt">0.9 mg/dL</td><td>0.6 &ndash; 1.2 mg/dL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="1.0,1.0,0.9,0.9,0.9,0.9,0.9,0.9"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">eGFR</b><br><span style="font-size:12.5px;color:var(--muted)">Kidney filtration</span></td><td>Sep 02</td><td class="amt">94 mL/min</td><td>&gt; 60 mL/min</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="88,89,90,91,92,93,93,94"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Haemoglobin</b><br><span style="font-size:12.5px;color:var(--muted)">CBC</span></td><td>Jun 18</td><td class="amt">13.6 g/dL</td><td>12.0 &ndash; 15.5 g/dL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="13.1,13.2,13.3,13.4,13.4,13.5,13.6,13.6"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Ferritin</b><br><span style="font-size:12.5px;color:var(--muted)">Iron stores</span></td><td>Jun 18</td><td class="amt">48 ng/mL</td><td>30 &ndash; 400 ng/mL</td><td><svg class="spark mini" style="--c:#17b8a6" data-spark="26,29,33,36,39,42,45,48"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">White cell count</b><br><span style="font-size:12.5px;color:var(--muted)">CBC</span></td><td>Jun 18</td><td class="amt">6.2 K/uL</td><td>4.0 &ndash; 11.0 K/uL</td><td><svg class="spark mini" style="--c:#ffb547" data-spark="10.8,9.9,9.1,8.4,7.8,7.2,6.6,6.2"></svg></td><td><span class="pill-state st-green"><i></i>Normal</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>12-month trend</h3><p>Your two key markers across the year</p></div></div>
+          <div class="chart-wrap" id="labChart"
+               data-labels="Nov,Dec,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"
+               data-chart='[{"name":"HbA1c","color":"#17b8a6","data":[5.9,5.8,5.7,5.7,5.6,5.6,5.5,5.5,5.4,5.5,5.4,5.4]},{"name":"LDL cholesterol","color":"#7c5cff","data":[124,120,117,113,109,105,102,100,98,97,96,96]}]'></div>
+          <div class="legend">
+            <span style="--c:#17b8a6"><i></i> HbA1c (%)</span>
+            <span style="--c:#7c5cff"><i></i> LDL cholesterol (mg/dL)</span>
+          </div>
+        </div>
+
+        <div class="panel lab-coverage-panel">
+          <div class="panel-head"><div><h3>Annual panel coverage</h3><p>9 of 9 recommended tests completed</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="210 66.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="44 232.5" stroke-dashoffset="-210"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="22 254.5" stroke-dashoffset="-254"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="100" data-dec="0">0</span>%</b><span>Panel complete</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> Metabolic panel <b>9 tests</b></li>
+            <li style="--c:#4aa8ff"><i></i> Lipid panel <b>4 tests</b></li>
+            <li style="--c:#ffb547"><i></i> Vitamin panel <b>2 tests</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head"><div><h3>Understanding your results</h3><p>What each marker means and what to do about it</p></div></div>
+        <div class="acc">
+          <button class="acc-q" type="button">What does HbA1c measure? <i class="acc-symbol" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>HbA1c reflects your average blood sugar over roughly three months. Yours is 5.4%, comfortably inside the 4.0&ndash;5.6% normal range and down from 5.9% in November &mdash; keep up the current routine.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">Why was vitamin D flagged low? <i class="acc-symbol" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>At 24 ng/mL you are just under the 30 ng/mL threshold. Dr. Fischer has started you on 2,000 IU of vitamin D3 daily and rechecking in about three months. Most people correct this within 8&ndash;12 weeks.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">How should I read the reference range? <i class="acc-symbol" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>Each row shows the range typical for a healthy adult of your age and sex. Sitting just inside a boundary is normal &mdash; trends matter more than any single reading, which is why we plot every marker over time.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">What happens after a result is flagged? <i class="acc-symbol" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>A clinician reviews every result before it reaches you. Out-of-range values get a note, a plan, and often a <a href="prescriptions.html" style="color:var(--brand-d);font-weight:700">prescription update</a>. You will also get a message if anything needs your input.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — Stackly Telemedicine</title>
+<meta name="description" content="Create your PulseCare account to book video visits, track records and prescriptions securely.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="auth-body">
+
+
+
+
+
+
+<main>
+<section class="sect auth-sect">
+  <span class="blob blob-1" data-float></span>
+  <span class="blob blob-2" data-float></span>
+  <div class="grid-lines"></div>
+  <div class="container auth-shell">
+    <div class="auth-page-nav">
+      <a href="index.html" class="brand auth-page-brand" aria-label="Stackly home">
+        <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+      </a>
+      <a href="index.html" class="btn btn-sm btn-ghost auth-back-home"><i class="fa-solid fa-house fa-iw" aria-hidden="true"></i> Back to Home</a>
+    </div>
+    <div class="auth-wrap">
+    <div class="auth-card form-card reveal-s">
+      <div class="center">
+        
+        <span class="eyebrow">Create account</span>
+        <h1 class="sec-title" style="font-size:clamp(26px,3vw,36px)">Join Stackly</h1>
+        <p class="sec-sub" style="margin:0 auto 10px">Access your secure health dashboard in seconds</p>
+      </div>
+      <form class="signup-form" novalidate>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="sFull">Full name</label>
+            <input id="sFull" type="text" placeholder="Jordan Blake" autocomplete="name" required>
+            <span class="err-msg">Name must contain letters only.</span>
+          </div>
+          <div class="field full">
+            <label for="sRole">I am signing up as</label>
+            <select id="sRole" required>
+              <option value="" selected disabled>Select account type</option>
+              <option value="user">User &mdash; Patient / Client</option>
+              <option value="admin">Admin &mdash; Administrator</option>
+            </select>
+            <span class="err-msg">Select an account type.</span>
+          </div>
+          <div class="field full">
+            <label for="sEmail">Email address</label>
+            <input id="sEmail" type="email" placeholder="you@gmail.com" required>
+            <span class="err-msg">Use a valid @gmail.com address.</span>
+          </div>
+          <div class="field full">
+            <label for="sPwd">Password</label>
+            <div class="password-wrap">
+              <input id="sPwd" type="password" placeholder="Minimum 8 characters" minlength="8" required>
+              <button class="password-toggle" type="button" data-password-toggle="sPwd" aria-label="Show password" aria-pressed="false">
+                <i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="err-msg">Password must be at least 8 characters.</span>
+          </div>
+          <div class="field full">
+            <label for="sPwd2">Confirm password</label>
+            <div class="password-wrap">
+              <input id="sPwd2" type="password" placeholder="Re-enter password" minlength="8" required>
+              <button class="password-toggle" type="button" data-password-toggle="sPwd2" aria-label="Show password" aria-pressed="false">
+                <i class="fa-solid fa-eye fa-iw" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="err-msg">Passwords do not match.</span>
+          </div>
+          <div class="field full">
+            <label class="checkbox" for="sTerms"><input id="sTerms" type="checkbox" required> I agree to the <a href="404.html">Terms</a> and <a href="404.html">Privacy Policy</a></label>
+            <span class="err-msg">You must accept to continue.</span>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-block" type="submit" style="margin-top:10px">Create account</button>
+        <p class="center" style="margin-top:20px;font-size:14.5px">Already have an account? <a href="login.html" style="color:var(--brand-d);font-weight:700">Log in</a></p>
+      </form>
+    </div>
+    <div class="auth-side reveal">
+      <span class="eyebrow">Why Stackly</span>
+      <h2 class="sec-title" style="font-size:clamp(24px,3vw,40px)">Your care, <span class="grad-text">always one tap away</span></h2>
+      <p>Book video visits in minutes, keep prescriptions and records in one place, and message your care team securely.</p>
+      <ul class="check-list">
+        <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>Same-day clinician access</b><p>Most visits connect in under 5 minutes.</p></span></li>
+        <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>Private &amp; secure</b><p>HIPAA-compliant with encrypted records.</p></span></li>
+        <li><i class="fa-solid fa-circle-check fa-iw" aria-hidden="true"></i><span><b>All-in-one dashboard</b><p>Appointments, labs, prescriptions &amp; messages.</p></span></li>
+      </ul>
+      <div class="pill-list" style="margin-top:26px"><span class="pill">No card required</span><span class="pill">Cancel anytime</span><span class="pill">Insurance accepted</span></div>
+    </div>
+  </div>
+  </div><!-- auth-shell-end -->
+</section>
+</main>
+
+
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function(){
+  const form=document.querySelector('.auth-card form');
+  if(!form)return;
+  const nameRe=/^[A-Za-z]+(?:\s+[A-Za-z]+)*$/;
+  const mailRe=/^[A-Za-z0-9._%+-]+@gmail\.com$/i;
+
+  function check(inp){
+    if(inp.type==='checkbox')return !inp.checked;
+    const v=(inp.value||'').trim();
+    if(!v)return true;
+    if(inp.id==='sFull')return !nameRe.test(v);
+    if(inp.id==='sEmail')return !mailRe.test(v);
+    if(inp.id==='sPwd')return v.length<8;
+    if(inp.id==='sPwd2')return v.length<8||v!==document.getElementById('sPwd').value;
+    if(inp.type==='email')return !mailRe.test(v);
+    return false;
+  }
+
+  // Password visibility toggle
+  form.querySelectorAll('.password-toggle').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const inputId = this.getAttribute('data-password-toggle');
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      this.setAttribute('aria-pressed', String(isPassword));
+      
+      const icon = this.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-eye', !isPassword);
+        icon.classList.toggle('fa-eye-slash', isPassword);
+      }
+    });
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    let ok=true;
+    form.querySelectorAll('[required]').forEach(inp=>{
+      const f=inp.closest('.field')||inp.parentElement;
+      const bad=check(inp);
+      f.classList.toggle('err',bad);
+      if(bad){
+        ok=false;
+        if(typeof inp.focus==='function')inp.focus();
+      }
+    });
+    if(!ok)return;
+    window.location.href='login.html';
+  });
+
+  form.querySelectorAll('[required]').forEach(inp=>{
+    inp.addEventListener('input',function(){
+      const f=inp.closest('.field')||inp.parentElement;
+      if(f.classList.contains('err')&&!check(inp))f.classList.remove('err');
+    });
+    if(inp.type==='checkbox'){
+      inp.addEventListener('change',function(){
+        const f=inp.closest('.field')||inp.parentElement;
+        if(inp.checked)f.classList.remove('err');
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

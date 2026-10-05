@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookings — Stackly Admin Console</title>
+<meta name="description" content="Stackly admin: booking requests, triage queue, specialty demand and booking sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>E</i>
+      <span><b data-user-name>Elena Ruiz</b><span>Operations Admin</span></span>
+    </div>
+
+    <div class="side-label">Operations</div>
+    <nav class="side-nav">
+      <a class="side-link" href="admin.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Overview</a>
+      <a class="side-link" href="patients.html"><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> Patients <span class="badge-n">12</span></a>
+      <a class="side-link" href="clinicians.html"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i> Clinicians</a>
+      <a class="side-link active" href="bookings.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Bookings <span class="badge-n">5</span></a>
+      <a class="side-link" href="revenue.html"><i class="fa-solid fa-arrow-trend-up fa-iw" aria-hidden="true"></i> Revenue</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search patients, clinicians, invoice IDs…" aria-label="Search" id="globalSearch">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Alerts">
+            <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <button class="btn btn-sm btn-ghost" data-toast="Schedule export queued — 4,890 bookings this month.">Export CSV</button>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>E</i>
+            <span><b data-user-name>Elena Ruiz</b><span data-user-email>elena@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="admin.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Admin console <span>/</span> <span>Bookings</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Booking operations</h1>
+          <p>4,890 bookings in October &middot; 5 requests awaiting triage &middot; median wait 6 minutes</p>
+        </div>
+        <div class="acts">
+          <a href="#queue" class="btn btn-sm btn-ghost"><i class="fa-solid fa-clipboard-check fa-iw" aria-hidden="true"></i> Assign queue</a>
+          <button class="btn btn-sm" data-toast="Auto-assign ran — 4 of 5 requests matched to available clinicians.">Auto-assign</button>
+        </div>
+      </div>
+
+      <div class="alert">
+        <i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i>
+        <div><b>1 priority request is 4 minutes from SLA breach</b><p>Request #8409 &middot; child fever, pediatrics &middot; waiting 41 minutes against a 45-minute target.</p></div>
+        <a href="#requests">Assign now &rarr;</a>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>2</span></div>
+          <h3><span data-count="5" data-dec="0">0</span></h3>
+          <p>Awaiting triage</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span><span class="trend up"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i>9.1%</span></div>
+          <h3><span data-count="42" data-dec="0">0</span></h3>
+          <p>Assigned today</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-heart-pulse fa-iw" aria-hidden="true"></i></span><span class="trend down"><i class="fa-solid fa-arrow-down fa-iw" aria-hidden="true"></i>0.3%</span></div>
+          <h3><span data-count="96.1" data-dec="1">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">%</span></h3>
+          <p>Completion rate</p>
+        </div>
+        <div class="kpi" style="--c:#ff6fa8">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i></span><span class="trend down"><i class="fa-solid fa-arrow-down fa-iw" aria-hidden="true"></i>2 min</span></div>
+          <h3><span data-count="6" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">min</span></h3>
+          <p>Median wait to assignment</p>
+        </div>
+      </div>
+
+      <div class="panel" id="requests" style="margin-bottom:22px">
+        <div class="panel-head"><div><h3>Booking requests</h3><p>Awaiting triage or assignment</p></div>
+          <div class="tabs">
+            <button class="tab active">Pending</button>
+            <button class="tab">Done</button>
+          </div>
+        </div>
+        <div class="dash-grid" style="gap:12px;margin:0" data-stagger>
+          <div class="app-card" style="--c:#17b8a6">
+            <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8412</b></span>
+            <div class="app-info"><b>Anna Kowalski</b><p>Cardiology &middot; Palpitations, 2 weeks</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 6 min ago</span><span><i class="fa-solid fa-user-clock fa-iw" aria-hidden="true"></i> Unassigned</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#4aa8ff">
+            <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8411</b></span>
+            <div class="app-info"><b>Marcus Bell</b><p>Mental health &middot; Anxiety, 3 weeks</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 22 min ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 3 matching</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#ff6fa8">
+            <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8409</b></span>
+            <div class="app-info"><b>Sofia Mendes</b><p>Pediatrics &middot; Child fever, 1 day</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 41 min ago</span><span><i class="fa-solid fa-triangle-exclamation fa-iw" aria-hidden="true"></i> Priority &middot; SLA 45m</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#ffb547">
+            <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8407</b></span>
+            <div class="app-info"><b>Yusuf Demir</b><p>Dermatology &middot; Rash, 4 days</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 1h ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 5 matching</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#7c5cff">
+            <span class="app-date" style="width:52px;height:52px"><span style="font-size:10px">REQ</span><b style="font-size:17px">#8404</b></span>
+            <div class="app-info"><b>Grace Liu</b><p>Chronic care &middot; Diabetes review</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> 2h ago</span><span><i class="fa-solid fa-user fa-iw" aria-hidden="true"></i> 2 matching</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button>
+              <button class="btn-icon-sm" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="queue" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Assignment queue</h3><p>Unassigned requests by wait time &middot; 42 assigned today</p></div>
+          <div class="tool-row" style="margin:0">
+            <div class="search-box" style="padding:8px 16px;flex:none">
+              <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+              <input type="search" placeholder="Filter requests…" data-table-filter="#bookingTbl" aria-label="Filter booking requests">
+            </div>
+            <button class="btn btn-sm btn-ghost" data-toast="Schedule export queued — 4,890 bookings for October.">Export schedule</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="bookingTbl" style="min-width:760px">
+            <thead><tr><th>Request</th><th>Patient</th><th>Specialty</th><th>Received</th><th>Wait</th><th>Match</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td><b>#8412</b></td><td>Anna Kowalski</td><td>Cardiology</td><td>Today, 10:02 AM</td><td class="amt">6 min</td><td><span class="pill-state st-blue"><i></i>Unassigned</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#8411</b></td><td>Marcus Bell</td><td>Mental health</td><td>Today, 9:46 AM</td><td class="amt">22 min</td><td><span class="pill-state st-blue"><i></i>3 clinicians</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#8409</b></td><td>Sofia Mendes</td><td>Pediatrics</td><td>Today, 9:27 AM</td><td class="amt">41 min</td><td><span class="pill-state st-red"><i></i>Priority &middot; SLA 45m</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#8407</b></td><td>Yusuf Demir</td><td>Dermatology</td><td>Today, 8:51 AM</td><td class="amt">1h 17m</td><td><span class="pill-state st-blue"><i></i>5 clinicians</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#8404</b></td><td>Grace Liu</td><td>Chronic care</td><td>Today, 8:12 AM</td><td class="amt">1h 56m</td><td><span class="pill-state st-blue"><i></i>2 clinicians</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><b>#8402</b></td><td>Peter Vance</td><td>Primary care</td><td>Today, 7:38 AM</td><td class="amt">2h 30m</td><td><span class="pill-state st-amber"><i></i>6 clinicians</span></td>
+                <td><div class="row-act"><button class="act-btn" data-confirm aria-label="Assign"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></button><button class="act-btn" data-block aria-label="Decline"><i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Bookings by specialty</h3><p>4,890 bookings this month</p></div></div>
+          <div class="progress-list">
+            <div class="pg-item"><b>Primary &amp; urgent care <span>1,858</span></b><div class="pg-bar"><i data-pct="100" style="--c:#17b8a6"></i></div><small>38% of bookings &middot; 61 available slots</small></div>
+            <div class="pg-item"><b>Mental health <span>1,125</span></b><div class="pg-bar"><i data-pct="61" style="--c:#7c5cff"></i></div><small>23% of bookings &middot; 18 available slots</small></div>
+            <div class="pg-item"><b>Specialists <span>831</span></b><div class="pg-bar"><i data-pct="45" style="--c:#4aa8ff"></i></div><small>17% of bookings &middot; 24 available slots</small></div>
+            <div class="pg-item"><b>Chronic care <span>587</span></b><div class="pg-bar"><i data-pct="32" style="--c:#ff6fa8"></i></div><small>12% of bookings &middot; 9 available slots</small></div>
+            <div class="pg-item"><b>Diagnostics <span>489</span></b><div class="pg-bar"><i data-pct="26" style="--c:#ffb547"></i></div><small>10% of bookings &middot; 12 available slots</small></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Booking sources</h3><p>Where October bookings came from</p></div></div>
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="44" stroke="var(--bg)" stroke-dasharray="0 276.5"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#17b8a6" stroke-dasharray="171 105"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#4aa8ff" stroke-dasharray="58 218" stroke-dashoffset="-171"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#7c5cff" stroke-dasharray="31 245" stroke-dashoffset="-229"></circle>
+              <circle cx="60" cy="60" r="44" stroke="#ffb547" stroke-dasharray="16 260" stroke-dashoffset="-260"></circle>
+            </svg>
+            <div class="donut-center"><b><span data-count="4890" data-dec="0">0</span></b><span>Bookings</span></div>
+          </div>
+          <ul class="donut-list">
+            <li style="--c:#17b8a6"><i></i> Patient app <b>62%</b></li>
+            <li style="--c:#4aa8ff"><i></i> Provider referral <b>21%</b></li>
+            <li style="--c:#7c5cff"><i></i> Employer plan <b>11%</b></li>
+            <li style="--c:#ffb547"><i></i> Partner API <b>6%</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><h3>Booked against completed</h3><p>Last 12 weeks across all specialties</p></div>
+          <div class="tabs">
+            <button class="tab active">12W</button>
+            <button class="tab">4W</button>
+            <button class="tab">7D</button>
+          </div>
+        </div>
+        <div class="chart-wrap" id="bookChart"
+             data-labels="W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12"
+             data-chart='[{"name":"Booked","color":"#4aa8ff","data":[820,860,890,940,910,980,1020,990,1050,1090,1120,1180]},{"name":"Completed","color":"#17b8a6","data":[810,855,882,926,902,968,1012,984,1036,1072,1108,1162]}]'></div>
+        <div class="legend">
+          <span style="--c:#4aa8ff"><i></i> Booked</span>
+          <span style="--c:#17b8a6"><i></i> Completed</span>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head"><div><h3>Quick booking actions</h3><p>Triage and scheduling shortcuts</p></div></div>
+        <div class="quick" data-stagger>
+          <button class="q-card" style="--c:#17b8a6" data-toast="Auto-assign ran — 4 of 5 requests matched to available clinicians.">
+            <span class="q-ic"><i class="fa-solid fa-check fa-iw" aria-hidden="true"></i></span>
+            <b>Auto-assign queue</b><span>Match by specialty and load</span>
+          </button>
+          <button class="q-card" style="--c:#4aa8ff" data-toast="Bulk booking report generated (PDF, 4 pages).">
+            <span class="q-ic"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i></span>
+            <b>Export schedule</b><span>4,890 bookings this month</span>
+          </button>
+          <button class="q-card" style="--c:#7c5cff" data-toast="14 slots blocked across 3 clinics for training.">
+            <span class="q-ic"><i class="fa-solid fa-lock fa-iw" aria-hidden="true"></i></span>
+            <b>Block slots</b><span>Training and maintenance</span>
+          </button>
+          <button class="q-card" style="--c:#ff6fa8" data-toast="Reschedule batch queued — 9 patients will be notified by SMS.">
+            <span class="q-ic"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i></span>
+            <b>Reschedule batch</b><span>9 visits affected</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

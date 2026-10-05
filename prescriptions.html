@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prescriptions — Stackly</title>
+<meta name="description" content="Manage your Stackly prescriptions: active medications, refills, adherence and full medication history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/webp" href="images/stackly logo.webp">
+</head>
+<body class="dash-body">
+<div class="dash-shell">
+
+  <aside class="side" id="dashNav">
+    <button class="side-close" type="button" aria-label="Close menu" data-side-close>
+      <i class="fa-solid fa-xmark fa-iw" aria-hidden="true"></i>
+    </button>
+    <a href="index.html" class="side-brand brand">
+      <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+    </a>
+
+    <div class="side-user">
+      <i class="ini" data-user-initial>J</i>
+      <span><b data-user-name>Jordan Blake</b><span>Care+ Member</span></span>
+    </div>
+
+    <div class="side-label">Overview</div>
+    <nav class="side-nav">
+      <a class="side-link" href="dashboard.html"><i class="fa-solid fa-table-cells fa-iw" aria-hidden="true"></i> Dashboard</a>
+      <a class="side-link" href="appointments.html"><i class="fa-solid fa-calendar fa-iw" aria-hidden="true"></i> Appointments</a>
+      <a class="side-link" href="messages.html"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Messages <span class="badge-n">3</span></a>
+      <a class="side-link active" href="prescriptions.html"><i class="fa-solid fa-file fa-iw" aria-hidden="true"></i> Prescriptions</a>
+      <a class="side-link" href="lab-results.html"><i class="fa-solid fa-inbox fa-iw" aria-hidden="true"></i> Lab Results</a>
+    </nav>
+
+    <div class="side-logout-wrap">
+      <button class="side-logout" type="button" data-logout>
+        <i class="fa-solid fa-arrow-right-from-bracket fa-iw" aria-hidden="true"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+
+   
+  </aside>
+
+  <div class="dash-main">
+
+    <div class="dash-top top-min">
+      <div class="dash-top-in">
+        <a href="index.html" class="dash-brand" aria-label="Stackly home">
+          <img class="brand-logo" src="images/stackly logo.webp" alt="Stackly">
+        </a>
+        <button class="side-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="dashNav"><span></span><span></span><span></span></button>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+          <input type="search" placeholder="Search medications…" aria-label="Search medications">
+        </div>
+        <div class="dash-top-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell fa-iw" aria-hidden="true"></i>
+            <span class="dot-alert"></span>
+          </button>
+          <a href="contact.html" class="btn btn-sm">New visit</a>
+          <div class="dash-user">
+            <i class="ini" data-user-initial>J</i>
+            <span><b data-user-name>Jordan Blake</b><span data-user-email>jordan@pulsecare.health</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-body-pad">
+
+      <a href="dashboard.html" class="sub-crumb"><i class="fa-solid fa-arrow-left fa-iw" aria-hidden="true"></i> Dashboard <span>/</span> <span>Prescriptions</span></a>
+
+      <div class="dash-hello">
+        <div>
+          <h1>Prescriptions</h1>
+          <p>3 active medications, all delivered by Midtown Pharmacy. Refills are usually approved within 24 hours.</p>
+        </div>
+        <div class="acts">
+          <a href="messages.html" class="btn btn-sm btn-ghost"><i class="fa-solid fa-comment fa-iw" aria-hidden="true"></i> Ask a pharmacist</a>
+          <button class="btn btn-sm" data-toast="Refill request sent to your prescriber.">Request a refill</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" style="--c:#17b8a6">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-file-lines fa-iw" aria-hidden="true"></i></span><span class="trend up">On time</span></div>
+          <h3><span data-count="3" data-dec="0">0</span></h3>
+          <p>Active prescriptions</p>
+        </div>
+        <div class="kpi" style="--c:#ffb547">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-rotate fa-iw" aria-hidden="true"></i></span><span class="trend down">Oct 28</span></div>
+          <h3><span data-count="1" data-dec="0">0</span></h3>
+          <p>Refills due soon</p>
+        </div>
+        <div class="kpi" style="--c:#7c5cff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-star fa-iw" aria-hidden="true"></i></span><span class="trend up">+4%</span></div>
+          <h3><span data-count="96" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">%</span></h3>
+          <p>Adherence, last 30 days</p>
+        </div>
+        <div class="kpi" style="--c:#4aa8ff">
+          <div class="kpi-top"><span class="kpi-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span><span class="trend up">Covered</span></div>
+          <h3><span data-count="47" data-dec="0">0</span><span class="suf" style="font-size:20px;color:var(--brand-d)">/mo</span></h3>
+          <p>Estimated medication cost</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="panel-head">
+          <div><h3>Active medications</h3><p>Current prescriptions and adherence</p></div>
+          <a href="messages.html" class="panel-link">Ask a pharmacist <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+        </div>
+        <div class="dash-grid g-3" style="margin:0" data-stagger>
+          <div class="rx" style="--c:#17b8a6">
+            <div class="rx-top">
+              <div class="rx-name">
+                <span class="rx-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span>
+                <div><b>Lisinopril</b><span>Blood pressure &middot; ACE inhibitor</span></div>
+              </div>
+              <span class="pill-state st-amber"><i></i>Refill due</span>
+            </div>
+            <div class="rx-grid">
+              <div>Dose<b>10 mg, 1x daily</b></div>
+              <div>Prescriber<b>Dr. L. Fischer</b></div>
+              <div>Remaining<b>9 days</b></div>
+            </div>
+            <div class="rx-adh">
+              <div class="pg-bar" style="--c:#17b8a6"><i data-pct="97"></i></div>
+              <span>97%</span>
+            </div>
+            <div class="rx-act">
+              <button class="btn btn-sm" data-toast="Refill request sent to your care team &mdash; usually approved within 24 hours.">Refill</button>
+              <button class="btn btn-sm btn-ghost" data-toast="Dose change request sent to Dr. Fischer.">Change dose</button>
+              <span class="spacer"></span>
+              <a href="lab-results.html" class="panel-link">Related results <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="rx" style="--c:#4aa8ff">
+            <div class="rx-top">
+              <div class="rx-name">
+                <span class="rx-ic"><i class="fa-solid fa-dollar-sign fa-iw" aria-hidden="true"></i></span>
+                <div><b>Metformin ER</b><span>Glucose control &middot; Biguanide</span></div>
+              </div>
+              <span class="pill-state st-green"><i></i>4 refills left</span>
+            </div>
+            <div class="rx-grid">
+              <div>Dose<b>500 mg, with dinner</b></div>
+              <div>Prescriber<b>Dr. A. Osei</b></div>
+              <div>Remaining<b>26 days</b></div>
+            </div>
+            <div class="rx-adh">
+              <div class="pg-bar" style="--c:#4aa8ff"><i data-pct="95"></i></div>
+              <span>95%</span>
+            </div>
+            <div class="rx-act">
+              <button class="btn btn-sm" data-toast="Refill scheduled &mdash; Midtown Pharmacy will call when it is ready.">Refill</button>
+              <button class="btn btn-sm btn-ghost" data-toast="Meal-timing guidance sent to your messages.">Usage tips</button>
+              <span class="spacer"></span>
+              <a href="lab-results.html" class="panel-link">Related results <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="rx" style="--c:#7c5cff">
+            <div class="rx-top">
+              <div class="rx-name">
+                <span class="rx-ic"><i class="fa-solid fa-sun fa-iw" aria-hidden="true"></i></span>
+                <div><b>Cholecalciferol</b><span>Vitamin D3 &middot; Supplement</span></div>
+              </div>
+              <span class="pill-state st-blue"><i></i>New, Oct 14</span>
+            </div>
+            <div class="rx-grid">
+              <div>Dose<b>2,000 IU, 1x daily</b></div>
+              <div>Prescriber<b>Dr. L. Fischer</b></div>
+              <div>Remaining<b>30 days</b></div>
+            </div>
+            <div class="rx-adh">
+              <div class="pg-bar" style="--c:#7c5cff"><i data-pct="99"></i></div>
+              <span>99%</span>
+            </div>
+            <div class="rx-act">
+              <button class="btn btn-sm" data-toast="Refill scheduled &mdash; ships free with your Care+ plan.">Refill</button>
+              <button class="btn btn-sm btn-ghost" data-toast="Recheck ordered &mdash; vitamin D panel in 3 months.">Recheck levels</button>
+              <span class="spacer"></span>
+              <a href="lab-results.html" class="panel-link">Related results <i class="fa-solid fa-arrow-right fa-iw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid g-2e">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Adherence</h3><p>Weekly dose-taking rate over 12 weeks</p></div></div>
+          <div class="chart-wrap" id="adhChart"
+               data-labels="W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12"
+               data-chart='[{"name":"Adherence","color":"#17b8a6","data":[88,90,91,93,92,94,95,94,96,97,96,96]},{"name":"Target 95%","color":"#c2cfdb","data":[95,95,95,95,95,95,95,95,95,95,95,95]}]'></div>
+          <div class="legend">
+            <span style="--c:#17b8a6"><i></i> Adherence</span>
+            <span style="--c:#c2cfdb"><i></i> Target 95%</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Pharmacy &amp; delivery</h3><p>Where your medications are filled</p></div></div>
+          <div class="app-card" style="--c:#17b8a6">
+            <span class="app-date" style="width:52px;height:52px"><b style="font-size:20px">Rx</b></span>
+            <div class="app-info"><b>Midtown Pharmacy</b><p>214 Waverly Ave &middot; Open until 8pm</p>
+              <div class="meta"><span><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i> 1.2 mi away</span><span class="pill-state st-green"><i></i>Accepts Care+</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Transfer pharmacy" data-toast="Pharmacy transfer started &mdash; we'll confirm with Midtown today."><i class="fa-solid fa-expand fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="app-card" style="--c:#4aa8ff;margin-top:12px">
+            <span class="app-date" style="width:52px;height:52px"><i class="fa-solid fa-truck fa-iw" style="font-size:24px" aria-hidden="true"></i></span>
+            <div class="app-info"><b>Free monthly delivery</b><p>Ships in a temperature-safe box</p>
+              <div class="meta"><span><i class="fa-solid fa-clock fa-iw" aria-hidden="true"></i> Next delivery Oct 27</span><span class="pill-state st-green"><i></i>Tracked</span></div>
+            </div>
+            <div class="app-act">
+              <button class="btn-icon-sm" aria-label="Track delivery" data-toast="Tracking opened &mdash; arriving Oct 27 between 2 and 6pm."><i class="fa-solid fa-location-dot fa-iw" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head">
+          <div><h3>Medication history</h3><p>Everything you have taken, including past courses</p></div>
+        </div>
+        <div class="tool-row">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass fa-iw" aria-hidden="true"></i>
+            <input type="search" data-table-filter="#medTable" placeholder="Search medication, reason or prescriber…" aria-label="Search medication history">
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="medTable">
+            <thead><tr><th>Medication</th><th>Started</th><th>Status</th><th>Prescriber</th><th>Reason</th></tr></thead>
+            <tbody>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Lisinopril 10mg</b><br><span style="font-size:12.5px;color:var(--muted)">1 tablet daily</span></td><td>Mar 04, 2024</td><td><span class="pill-state st-amber"><i></i>Refill due</span></td><td>Dr. Lena Fischer</td><td>Hypertension</td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Metformin ER 500mg</b><br><span style="font-size:12.5px;color:var(--muted)">1 tablet with dinner</span></td><td>Nov 19, 2023</td><td><span class="pill-state st-green"><i></i>Active</span></td><td>Dr. Amara Osei</td><td>Type 2 diabetes</td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Cholecalciferol D3</b><br><span style="font-size:12.5px;color:var(--muted)">2,000 IU daily</span></td><td>Oct 14, 2025</td><td><span class="pill-state st-blue"><i></i>New course</span></td><td>Dr. Lena Fischer</td><td>Vitamin D deficiency</td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Amoxicillin 500mg</b><br><span style="font-size:12.5px;color:var(--muted)">3x daily for 7 days</span></td><td>Feb 08, 2025</td><td><span class="pill-state st-grey"><i></i>Completed</span></td><td>Dr. Lena Fischer</td><td>Sinus infection</td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Atorvastatin 20mg</b><br><span style="font-size:12.5px;color:var(--muted)">1 tablet at night</span></td><td>Jun 2022 &ndash; Jan 2023</td><td><span class="pill-state st-grey"><i></i>Discontinued</span></td><td>Dr. Amara Osei</td><td>High cholesterol</td></tr>
+              <tr><td><b style="font-family:var(--fd);color:var(--ink)">Sertraline 50mg</b><br><span style="font-size:12.5px;color:var(--muted)">1 tablet daily</span></td><td>Apr 2021 &ndash; Sep 2022</td><td><span class="pill-state st-grey"><i></i>Discontinued</span></td><td>Dr. Ravi Mehta</td><td>Anxiety</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head"><div><h3>Medication safety</h3><p>Common questions about your prescriptions</p></div></div>
+        <div class="acc active">
+          <button class="acc-q" type="button">What if I miss a dose? <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>Take it as soon as you remember unless it is nearly time for your next dose &mdash; never double up. For Metformin ER, skip the missed dose entirely and continue at the usual time.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">Can I get a refill early? <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>Yes, once you have 5 days or fewer remaining. Send a request from this page and your prescriber usually approves it within 24 hours, then Midtown Pharmacy fills it for free delivery.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">How do refills interact with my plan? <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>Care+ covers generic medications in full and branded medications at 70%, with monthly delivery included. Your current estimated cost is $47 per month across 3 medications.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc-q" type="button">Something looks like a side effect <i class="fa-solid fa-chevron-down fa-iw" aria-hidden="true"></i></button>
+          <div class="acc-a"><p>Message your care team from the <a href="messages.html" style="color:var(--brand-d);font-weight:700">Messages</a> page with a description and a time. For severe reactions &mdash; swelling, difficulty breathing, chest pain &mdash; call emergency services immediately.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up fa-iw" aria-hidden="true"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
